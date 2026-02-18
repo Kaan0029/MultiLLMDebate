@@ -1,0 +1,458 @@
+{
+  "round1": [
+    {
+      "model": "gpt4o",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a B1 level of proficiency.
+       In terms of fluency, the speaker can express ideas and opinions on familiar topics, though there are some
+        hesitations and awkward phrasing. Grammar accuracy is moderate; the speaker uses simple structures correctly 
+        but makes errors with more complex sentences (e.g., 'which is longer than others,' 'in the work life, t
+        hey made many difficulties'). Vocabulary range is adequate for discussing familiar topics, though it 
+        lacks precision and variety. Pronunciation is generally clear, but there are occasional mispronunciations 
+        that may require listener effort to understand. Coherence and organization are present, with the speaker 
+        attempting to connect ideas logically, though transitions between ideas could be smoother. Overall, 
+        the response reflects a B1 level, with the ability to communicate basic ideas despite some errors and 
+        limitations.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a B1 level of proficiency. In terms of fluency, 
+        the speaker can express ideas and opinions on familiar topics, though there are some
+         hesitations and awkward phrasing. Grammar accuracy is moderate; the speaker uses simple structures 
+         correctly but makes errors with more complex sentences (e.g., 'which is longer than others,' '
+         in the work life, they made many difficulties'). Vocabulary range is adequate for discussing 
+         familiar topics, though it lacks precision and variety. Pronunciation is generally clear, 
+         but there are occasional mispronunciations that may require listener effort to understand. 
+         Coherence and organization are present, with the speaker attempting to connect ideas logically, 
+         though transitions between ideas could be smoother. Overall, the response reflects a B1 level,
+          with the ability to communicate basic ideas despite some errors and limitations."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"label\": \"A2\",\n  \"reason\": \"This response demonstrates A2-level proficiency with some B1 attempts. **Fluency**: The speaker maintains basic communication flow but with noticeable pauses and some unclear connections between ideas. **Grammar accuracy**: Shows A2-level control with simple present and past tenses mostly accurate, but contains errors like 'we go to the news' (unclear meaning), 'they made many difficulties' (incorrect verb usage), and 'I feel the sound of shame' (word choice error). **Vocabulary range**: Uses everyday vocabulary appropriately (part-time job, work experience, independent life, setbacks) but shows limitations in precision and some inappropriate word choices. Attempts some B1-level expressions like 'in order to' and 'different kinds of setbacks.' **Pronunciation clarity**: Generally understandable despite some unclear phrases. **Coherence and organization**: The response has a basic logical structure discussing holiday work experiences and challenges, but the final sentence 'I feel the sound of shame' seems disconnected and unclear. The speaker can express main ideas and personal experiences but lacks the consistent accuracy and clarity needed for B1 level.\"\n}",
+      "parsed": {
+        "label": "A2",
+        "reason": "This response demonstrates A2-level proficiency with some B1 attempts. **Fluency**: The speaker maintains basic communication flow but with noticeable pauses and some unclear connections between ideas. **Grammar accuracy**: Shows A2-level control with simple present and past tenses mostly accurate, but contains errors like 'we go to the news' (unclear meaning), 'they made many difficulties' (incorrect verb usage), and 'I feel the sound of shame' (word choice error). **Vocabulary range**: Uses everyday vocabulary appropriately (part-time job, work experience, independent life, setbacks) but shows limitations in precision and some inappropriate word choices. Attempts some B1-level expressions like 'in order to' and 'different kinds of setbacks.' **Pronunciation clarity**: Generally understandable despite some unclear phrases. **Coherence and organization**: The response has a basic logical structure discussing holiday work experiences and challenges, but the final sentence 'I feel the sound of shame' seems disconnected and unclear. The speaker can express main ideas and personal experiences but lacks the consistent accuracy and clarity needed for B1 level."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"label\": \"A2\",\n  \"reason\": \"The student demonstrates characteristics of an A2 level speaker. They can produce a series of simple phrases and sentences linked with basic connectors about personal topics, but with noticeable errors that can impede communication.\\n\\n**Fluency:** The response is delivered in short chunks and phrases. There are several awkward formulations ('I agree that statement is...', 'made their most difficult') that disrupt the flow and suggest the speaker is struggling to construct sentences, which is common at the A2 level.\\n\\n**Grammar Accuracy:** There is inconsistent control over basic grammatical structures. Errors are frequent and sometimes obscure the meaning, for example: subject-verb agreement ('holidays, which is longer'), incorrect verb choice ('made many difficulties' instead of 'faced' or 'had'), and incomprehensible sentence structures ('Different kinds of setbacks made their most difficult'). While some simple sentences are correct, the overall accuracy is low.\\n\\n**Vocabulary Range:** The speaker uses a basic vocabulary related to everyday life, such as 'holidays', 'part-time job', and 'work experience'. They use a good idiom ('kill the time'), but also highly unnatural and confusing phrases ('while we go to the news', 'the sound of shame'), indicating a limited vocabulary and a struggle to express more nuanced ideas precisely.\\n\\n**Pronunciation Clarity:** While this is a transcript, the unusual phrasing suggests that pronunciation, intonation, or stress may be influenced by the speaker's first language, potentially leading to misunderstandings.\\n\\n**Coherence and Organization:** The speaker uses simple connectors like 'so' and 'because' to link ideas. However, the overall message lacks logical coherence. The progression from 'setbacks made their most difficult' to 'so it was so easy on everything afterwards' is contradictory. The final sentence 'I feel the sound of shame' is abrupt and its connection to the preceding text is unclear. The ability to link simple sentences is present, but the ability to form a coherent, developed argument is absent.\"\n}\n```",
+      "parsed": {
+        "label": "A2",
+        "reason": "The student demonstrates characteristics of an A2 level speaker. They can produce a series of simple phrases and sentences linked with basic connectors about personal topics, but with noticeable errors that can impede communication.\n\n**Fluency:** The response is delivered in short chunks and phrases. There are several awkward formulations ('I agree that statement is...', 'made their most difficult') that disrupt the flow and suggest the speaker is struggling to construct sentences, which is common at the A2 level.\n\n**Grammar Accuracy:** There is inconsistent control over basic grammatical structures. Errors are frequent and sometimes obscure the meaning, for example: subject-verb agreement ('holidays, which is longer'), incorrect verb choice ('made many difficulties' instead of 'faced' or 'had'), and incomprehensible sentence structures ('Different kinds of setbacks made their most difficult'). While some simple sentences are correct, the overall accuracy is low.\n\n**Vocabulary Range:** The speaker uses a basic vocabulary related to everyday life, such as 'holidays', 'part-time job', and 'work experience'. They use a good idiom ('kill the time'), but also highly unnatural and confusing phrases ('while we go to the news', 'the sound of shame'), indicating a limited vocabulary and a struggle to express more nuanced ideas precisely.\n\n**Pronunciation Clarity:** While this is a transcript, the unusual phrasing suggests that pronunciation, intonation, or stress may be influenced by the speaker's first language, potentially leading to misunderstandings.\n\n**Coherence and Organization:** The speaker uses simple connectors like 'so' and 'because' to link ideas. However, the overall message lacks logical coherence. The progression from 'setbacks made their most difficult' to 'so it was so easy on everything afterwards' is contradictory. The final sentence 'I feel the sound of shame' is abrupt and its connection to the preceding text is unclear. The ability to link simple sentences is present, but the ability to form a coherent, developed argument is absent."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a moderate level of fluency, with some hesitation but generally maintains a flow of speech. Grammar accuracy is inconsistent, with several errors such as 'the same with me' and 'made many difficulties,' which affect clarity. The vocabulary range is adequate for expressing ideas, though some phrases are awkward or unclear, such as 'the sound of shame.' Pronunciation clarity is not assessable from the transcript, but the coherence and organization of ideas are somewhat lacking, as the response jumps between thoughts without clear connections. Overall, the response shows an ability to communicate ideas but with noticeable errors and a need for better organization.\"\n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a moderate level of fluency, with some hesitation but generally maintains a flow of speech. Grammar accuracy is inconsistent, with several errors such as 'the same with me' and 'made many difficulties,' which affect clarity. The vocabulary range is adequate for expressing ideas, though some phrases are awkward or unclear, such as 'the sound of shame.' Pronunciation clarity is not assessable from the transcript, but the coherence and organization of ideas are somewhat lacking, as the response jumps between thoughts without clear connections. Overall, the response shows an ability to communicate ideas but with noticeable errors and a need for better organization."
+      },
+      "label": "B1"
+    }
+  ],
+  "round2": [
+    {
+      "model": "gpt4o",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' arguments, I 
+      agree that the speaker's performance aligns more closely with A2 level proficiency. 
+      The speaker demonstrates basic communication skills with frequent grammatical errors and awkward
+      phrasing that impede clarity, which is characteristic of A2. While there are attempts at B1-level expressions, 
+      the overall accuracy and coherence are lacking, supporting an A2 label.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' arguments, I agree that the speaker's performance aligns more 
+        closely with A2 level proficiency. The speaker demonstrates basic communication skills with frequent grammatical 
+        errors and awkward phrasing that impede clarity, which is characteristic of A2. While there are attempts at B1-level 
+        expressions, the overall accuracy and coherence are lacking, supporting an A2 label."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other judgments, I maintain my A2 assessment. While gpt4o and grok argue for B1, their reasoning overlooks critical accuracy issues that prevent B1 classification. Gemini's detailed analysis aligns with mine, highlighting key problems: frequent grammatical errors that impede meaning ('holidays, which is longer,' 'made many difficulties,' 'made their most difficult'), unclear/nonsensical phrases ('while we go to the news,' 'the sound of shame'), and logical incoherence (contradictory progression from difficulties to 'easy afterwards'). B1 requires 'reasonably accurate use of frequently used patterns' and ability to 'link a series of shorter, discrete simple elements into a connected, linear sequence.' This transcript shows A2-level simple sentence linking with basic connectors, but lacks the consistent accuracy and coherent development required for B1. The errors significantly impact comprehensibility, which is characteristic of A2 rather than B1.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other judgments, I maintain my A2 assessment. While gpt4o and grok argue for B1, their reasoning overlooks critical accuracy issues that prevent B1 classification. Gemini's detailed analysis aligns with mine, highlighting key problems: frequent grammatical errors that impede meaning ('holidays, which is longer,' 'made many difficulties,' 'made their most difficult'), unclear/nonsensical phrases ('while we go to the news,' 'the sound of shame'), and logical incoherence (contradictory progression from difficulties to 'easy afterwards'). B1 requires 'reasonably accurate use of frequently used patterns' and ability to 'link a series of shorter, discrete simple elements into a connected, linear sequence.' This transcript shows A2-level simple sentence linking with basic connectors, but lacks the consistent accuracy and coherent development required for B1. The errors significantly impact comprehensibility, which is characteristic of A2 rather than B1."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' judgments, I am maintaining my A2 rating. The B1 arguments from gpt4o and grok acknowledge the numerous errors in grammar, vocabulary, and coherence but seem to weigh the speaker's ability to maintain a basic flow on a familiar topic more heavily. However, I find these errors to be significant enough to impede communication and cause misunderstanding, which is a key differentiator between A2 and B1. For instance, the sentences 'Different kinds of setbacks made their most difficult. So it was so easy on everything afterwards' are not just poorly structured; they are logically incoherent. A B1 speaker should be able to 'produce straightforward connected text' and generally avoid 'errors which cause misunderstanding.' This speaker struggles to do so. The overall performance aligns better with the A2 descriptor: 'Can produce a series of simple phrases and sentences linked with simple connectors... but still systematically makes basic mistakes.' The response shows an A2 speaker attempting to express more complex ideas but lacking the grammatical and lexical resources to do so coherently, as claude also noted.\"\n}\n```",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' judgments, I am maintaining my A2 rating. The B1 arguments from gpt4o and grok acknowledge the numerous errors in grammar, vocabulary, and coherence but seem to weigh the speaker's ability to maintain a basic flow on a familiar topic more heavily. However, I find these errors to be significant enough to impede communication and cause misunderstanding, which is a key differentiator between A2 and B1. For instance, the sentences 'Different kinds of setbacks made their most difficult. So it was so easy on everything afterwards' are not just poorly structured; they are logically incoherent. A B1 speaker should be able to 'produce straightforward connected text' and generally avoid 'errors which cause misunderstanding.' This speaker struggles to do so. The overall performance aligns better with the A2 descriptor: 'Can produce a series of simple phrases and sentences linked with simple connectors... but still systematically makes basic mistakes.' The response shows an A2 speaker attempting to express more complex ideas but lacking the grammatical and lexical resources to do so coherently, as claude also noted."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the arguments from other examiners, I maintain my B1 label because the speaker demonstrates a moderate level of fluency and can express ideas on familiar topics, despite some errors. While there are valid points made regarding the awkward phrasing and grammatical inaccuracies, the overall ability to communicate and connect ideas, albeit imperfectly, aligns more closely with B1 than A2. The speaker attempts to use more complex structures and vocabulary, which suggests a higher proficiency level than A2.\" \n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the arguments from other examiners, I maintain my B1 label because the speaker demonstrates a moderate level of fluency and can express ideas on familiar topics, despite some errors. While there are valid points made regarding the awkward phrasing and grammatical inaccuracies, the overall ability to communicate and connect ideas, albeit imperfectly, aligns more closely with B1 than A2. The speaker attempts to use more complex structures and vocabulary, which suggests a higher proficiency level than A2."
+      },
+      "updated_label": "B1"
+    }
+  ],
+  "majority_vote": {
+    "A2": 3,
+    "B1": 1
+  },
+  "final_label": "A2",
+  "sample_index": 0,
+  "audio_path": "/home/ap4617/MultiLLMDebate/data/audio/ICNALE_SM_CHN_N600/SM_CHN_PTJ1_001_B1_1.mp3",
+  "ground_truth": "B1"
+}
+
+{
+  "round1": [
+    {
+      "model": "gpt4o",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a B1 level of proficiency. In terms of fluency, the response is generally coherent with a clear main idea, though it lacks elaboration and depth. Grammar accuracy is mostly correct, with simple sentence structures and occasional errors, such as 'take the part-time job' instead of 'take a part-time job.' The vocabulary range is adequate for expressing basic ideas, but it is limited and repetitive, as seen in the repeated use of 'society' and 'part-time job.' Pronunciation is generally clear, though there may be minor issues that do not impede understanding. Coherence and organization are present, with a logical progression of ideas, but the response could benefit from more detailed support and examples.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a B1 level of proficiency. In terms of fluency, the response is generally coherent with a clear main idea, though it lacks elaboration and depth. Grammar accuracy is mostly correct, with simple sentence structures and occasional errors, such as 'take the part-time job' instead of 'take a part-time job.' The vocabulary range is adequate for expressing basic ideas, but it is limited and repetitive, as seen in the repeated use of 'society' and 'part-time job.' Pronunciation is generally clear, though there may be minor issues that do not impede understanding. Coherence and organization are present, with a logical progression of ideas, but the response could benefit from more detailed support and examples."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"label\": \"A2\",\n  \"reason\": \"**Fluency**: The response demonstrates basic fluency with simple, connected sentences. The speaker can express their main idea clearly but with limited elaboration and some repetitive phrasing.\\n\\n**Grammar accuracy**: Shows A2-level grammar with mostly simple present tense structures. There are some errors that don't impede understanding: 'take the part-time job' (unnecessary article), 'go into the society' (awkward preposition use), and 'They can know much more' (incomplete thought). However, basic sentence structures are generally correct.\\n\\n**Vocabulary range**: Limited vocabulary typical of A2 level. Uses basic terms like 'agree,' 'great experience,' 'communicate,' 'people,' and 'society.' The vocabulary is sufficient to convey the basic message but lacks variety and sophistication. Repetitive use of simple words.\\n\\n**Pronunciation clarity**: While not directly assessable from transcript, the coherent transcription suggests adequate pronunciation for basic communication.\\n\\n**Coherence and organization**: Basic coherence is present with a clear position statement followed by simple supporting reasons. However, the organization is quite elementary with limited development of ideas. The response shows A2-level ability to link simple ideas with basic connectors like 'I think' and 'They can.'\\n\\nOverall, this represents solid A2 performance - the speaker can express opinions on familiar topics using simple language structures, though with limited complexity and some minor errors.\"\n}",
+      "parsed": {
+        "label": "A2",
+        "reason": "**Fluency**: The response demonstrates basic fluency with simple, connected sentences. The speaker can express their main idea clearly but with limited elaboration and some repetitive phrasing.\n\n**Grammar accuracy**: Shows A2-level grammar with mostly simple present tense structures. There are some errors that don't impede understanding: 'take the part-time job' (unnecessary article), 'go into the society' (awkward preposition use), and 'They can know much more' (incomplete thought). However, basic sentence structures are generally correct.\n\n**Vocabulary range**: Limited vocabulary typical of A2 level. Uses basic terms like 'agree,' 'great experience,' 'communicate,' 'people,' and 'society.' The vocabulary is sufficient to convey the basic message but lacks variety and sophistication. Repetitive use of simple words.\n\n**Pronunciation clarity**: While not directly assessable from transcript, the coherent transcription suggests adequate pronunciation for basic communication.\n\n**Coherence and organization**: Basic coherence is present with a clear position statement followed by simple supporting reasons. However, the organization is quite elementary with limited development of ideas. The response shows A2-level ability to link simple ideas with basic connectors like 'I think' and 'They can.'\n\nOverall, this represents solid A2 performance - the speaker can express opinions on familiar topics using simple language structures, though with limited complexity and some minor errors."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"label\": \"A2\",\n  \"reason\": \"The student provides a clear and relevant answer to the prompt, demonstrating characteristics of the A2 level. \\n\\n**Fluency:** The response consists of short, simple sentences delivered in a linear fashion. There is some repetition ('part-time job', 'society'), which is common at this level, but the message is conveyed without significant hesitation.\\n\\n**Grammar Accuracy:** There is good control of basic grammar. The student correctly uses the present simple tense, modal verbs ('can'), and simple sentence structures ('I think it's a great experience...'). The phrase 'go into the society' is slightly unnatural but the meaning is clear.\\n\\n**Vocabulary Range:** The vocabulary is limited but appropriate for the topic. The student uses basic, high-frequency words like 'college students', 'part-time job', 'experience', and 'communicate'. The range is not wide enough for a B1 level, as evidenced by the general phrase 'know much more'.\\n\\n**Pronunciation Clarity:** This cannot be assessed from a transcript.\\n\\n**Coherence and Organization:** The response is coherent and logically structured. It begins with a clear statement of agreement ('I agree with the point...'), followed by simple supporting reasons ('They can communicate more...', 'They can know much more.'). The ideas are linked in a straightforward, easy-to-follow manner.\"\n}\n```",
+      "parsed": {
+        "label": "A2",
+        "reason": "The student provides a clear and relevant answer to the prompt, demonstrating characteristics of the A2 level. \n\n**Fluency:** The response consists of short, simple sentences delivered in a linear fashion. There is some repetition ('part-time job', 'society'), which is common at this level, but the message is conveyed without significant hesitation.\n\n**Grammar Accuracy:** There is good control of basic grammar. The student correctly uses the present simple tense, modal verbs ('can'), and simple sentence structures ('I think it's a great experience...'). The phrase 'go into the society' is slightly unnatural but the meaning is clear.\n\n**Vocabulary Range:** The vocabulary is limited but appropriate for the topic. The student uses basic, high-frequency words like 'college students', 'part-time job', 'experience', and 'communicate'. The range is not wide enough for a B1 level, as evidenced by the general phrase 'know much more'.\n\n**Pronunciation Clarity:** This cannot be assessed from a transcript.\n\n**Coherence and Organization:** The response is coherent and logically structured. It begins with a clear statement of agreement ('I agree with the point...'), followed by simple supporting reasons ('They can communicate more...', 'They can know much more.'). The ideas are linked in a straightforward, easy-to-follow manner."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"label\": \"A2\",\n  \"reason\": \"The student's response demonstrates basic fluency, as they can express their opinion on the topic, but the speech is somewhat hesitant and lacks smoothness. The grammar is mostly accurate, with simple sentence structures, but there are minor errors, such as 'the society' which should be 'society' in this context. The vocabulary range is limited, primarily using basic terms like 'great experience' and 'communicate,' which are appropriate but not varied. Pronunciation clarity is not assessable from the transcript, but the simplicity of the language suggests that it may be basic. Coherence and organization are present, as the student presents a clear opinion and provides a reason, but the ideas could be more developed and connected for a higher level.\" \n}",
+      "parsed": {
+        "label": "A2",
+        "reason": "The student's response demonstrates basic fluency, as they can express their opinion on the topic, but the speech is somewhat hesitant and lacks smoothness. The grammar is mostly accurate, with simple sentence structures, but there are minor errors, such as 'the society' which should be 'society' in this context. The vocabulary range is limited, primarily using basic terms like 'great experience' and 'communicate,' which are appropriate but not varied. Pronunciation clarity is not assessable from the transcript, but the simplicity of the language suggests that it may be basic. Coherence and organization are present, as the student presents a clear opinion and provides a reason, but the ideas could be more developed and connected for a higher level."
+      },
+      "label": "A2"
+    }
+  ],
+  "round2": [
+    {
+      "model": "gpt4o",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' arguments, I agree that the response aligns more closely with A2 level characteristics. The fluency is basic with simple, connected sentences and some repetition. The grammar shows control of basic structures with minor errors that do not impede understanding. The vocabulary is limited and lacks the variety expected at B1 level. The coherence and organization are straightforward but elementary. These points collectively support an A2 label more accurately than B1.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' arguments, I agree that the response aligns more closely with A2 level characteristics. The fluency is basic with simple, connected sentences and some repetition. The grammar shows control of basic structures with minor errors that do not impede understanding. The vocabulary is limited and lacks the variety expected at B1 level. The coherence and organization are straightforward but elementary. These points collectively support an A2 label more accurately than B1."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other judgments, I maintain my A2 assessment. While gpt4o argues for B1, citing 'generally coherent' response and 'logical progression of ideas,' the evidence doesn't support this higher level. The response lacks the elaboration, complexity, and vocabulary range expected at B1. The grammar errors ('take the part-time job,' 'go into the society'), limited vocabulary with repetitive phrasing, and incomplete thoughts ('They can know much more') are characteristic of A2 level. Both gemini and grok provide compelling A2 assessments that align with my analysis, noting the basic sentence structures, limited vocabulary range, and simple but adequate coherence typical of A2 performance.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other judgments, I maintain my A2 assessment. While gpt4o argues for B1, citing 'generally coherent' response and 'logical progression of ideas,' the evidence doesn't support this higher level. The response lacks the elaboration, complexity, and vocabulary range expected at B1. The grammar errors ('take the part-time job,' 'go into the society'), limited vocabulary with repetitive phrasing, and incomplete thoughts ('They can know much more') are characteristic of A2 level. Both gemini and grok provide compelling A2 assessments that align with my analysis, noting the basic sentence structures, limited vocabulary range, and simple but adequate coherence typical of A2 performance."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"updated_label\": \"A2\",\n  \"reason\": \"I am maintaining my original A2 label. The judgments from claude and grok align with my initial assessment, pointing to the use of short, simple sentences, limited vocabulary, and a basic but coherent structure. These are hallmark characteristics of the A2 level. The B1 judgment from gpt4o is not convincing; its own reasoning highlights features more typical of A2, such as a lack of elaboration, limited vocabulary, and the need for more detailed support. The sample does not demonstrate the B1 ability to develop an argument with a sequence of points or use a broader range of language to express ideas. The consensus strongly supports an A2 rating.\"\n}\n```",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "I am maintaining my original A2 label. The judgments from claude and grok align with my initial assessment, pointing to the use of short, simple sentences, limited vocabulary, and a basic but coherent structure. These are hallmark characteristics of the A2 level. The B1 judgment from gpt4o is not convincing; its own reasoning highlights features more typical of A2, such as a lack of elaboration, limited vocabulary, and the need for more detailed support. The sample does not demonstrate the B1 ability to develop an argument with a sequence of points or use a broader range of language to express ideas. The consensus strongly supports an A2 rating."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' judgments, I maintain my A2 label as the student's response demonstrates basic fluency and coherence with simple sentence structures and limited vocabulary. While some examiners suggested a B1 level, I believe the lack of elaboration, depth, and variety in vocabulary supports the A2 classification. The minor grammatical errors and repetitive phrasing further align with A2 characteristics.\" \n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' judgments, I maintain my A2 label as the student's response demonstrates basic fluency and coherence with simple sentence structures and limited vocabulary. While some examiners suggested a B1 level, I believe the lack of elaboration, depth, and variety in vocabulary supports the A2 classification. The minor grammatical errors and repetitive phrasing further align with A2 characteristics."
+      },
+      "updated_label": "A2"
+    }
+  ],
+  "majority_vote": {
+    "A2": 4
+  },
+  "final_label": "A2",
+  "sample_index": 1,
+  "audio_path": "/home/ap4617/MultiLLMDebate/data/audio/ICNALE_SM_CHN_N600/SM_CHN_PTJ1_002_B1_2.mp3",
+  "ground_truth": "B1"
+}
+
+{
+  "round1": [
+    {
+      "model": "gpt4o",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker is able to express ideas on the topic of part-time jobs with some pauses but maintains a generally coherent flow. The grammar accuracy is adequate, with correct use of simple structures, though there are occasional errors typical of this level. The vocabulary range is sufficient to discuss the topic, using phrases like 'reduce the burden' and 'difficulties of making a life,' which show an ability to use more than basic vocabulary. Pronunciation is generally clear, with most words being easily understood, though there may be some minor issues typical of a B1 speaker. Coherence and organization are present, as the speaker introduces the topic, presents arguments for part-time jobs, and begins to introduce a counterpoint, indicating an ability to structure their response logically.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker is able to express ideas on the topic of part-time jobs with some pauses but maintains a generally coherent flow. The grammar accuracy is adequate, with correct use of simple structures, though there are occasional errors typical of this level. The vocabulary range is sufficient to discuss the topic, using phrases like 'reduce the burden' and 'difficulties of making a life,' which show an ability to use more than basic vocabulary. Pronunciation is generally clear, with most words being easily understood, though there may be some minor issues typical of a B1 speaker. Coherence and organization are present, as the speaker introduces the topic, presents arguments for part-time jobs, and begins to introduce a counterpoint, indicating an ability to structure their response logically."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"This response demonstrates solid B1-level characteristics across multiple criteria. **Fluency**: The speaker maintains a steady pace with natural pausing and can express ideas continuously, though with some hesitation at the end. **Grammar accuracy**: Shows good control of basic structures with appropriate use of complex sentences ('when making money, these students can learn...'), though there are minor errors like 'making a life by their own' instead of 'on their own' and 'reduce the burden to their family' (should be 'on'). **Vocabulary range**: Uses appropriate topic-specific vocabulary including 'part-time jobs', 'burden', 'Moreover', and 'difficulties', demonstrating adequate range for the B1 level. **Pronunciation clarity**: While we cannot assess pronunciation from a transcript, the coherent flow suggests clear communication. **Coherence and organization**: Well-structured response using clear discourse markers ('On the one hand', 'Moreover', 'But on the other hand') and logical progression from introduction to balanced argumentation. The response shows typical B1 ability to present viewpoints on familiar topics with reasonable fluency, despite some linguistic limitations and the incomplete ending.\"\n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "This response demonstrates solid B1-level characteristics across multiple criteria. **Fluency**: The speaker maintains a steady pace with natural pausing and can express ideas continuously, though with some hesitation at the end. **Grammar accuracy**: Shows good control of basic structures with appropriate use of complex sentences ('when making money, these students can learn...'), though there are minor errors like 'making a life by their own' instead of 'on their own' and 'reduce the burden to their family' (should be 'on'). **Vocabulary range**: Uses appropriate topic-specific vocabulary including 'part-time jobs', 'burden', 'Moreover', and 'difficulties', demonstrating adequate range for the B1 level. **Pronunciation clarity**: While we cannot assess pronunciation from a transcript, the coherent flow suggests clear communication. **Coherence and organization**: Well-structured response using clear discourse markers ('On the one hand', 'Moreover', 'But on the other hand') and logical progression from introduction to balanced argumentation. The response shows typical B1 ability to present viewpoints on familiar topics with reasonable fluency, despite some linguistic limitations and the incomplete ending."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The student demonstrates a solid B1 level of proficiency. \\n\\n**Fluency:** The response is delivered at a fairly even tempo without significant pauses that would disrupt the flow. The student can keep going comprehensibly, linking ideas into a connected discourse. \\n\\n**Grammar Accuracy:** There is a good degree of grammatical control. Sentence structures are generally simple but correct (e.g., 'I think it is important for...', 'it can help students to...'). There are minor, non-impeding errors typical of this level, such as 'reduce the burden to their family' (instead of 'on') and 'by their own' (instead of 'on their own'), but these do not hinder communication.\\n\\n**Vocabulary Range:** The student has a sufficient vocabulary range to express their opinion on the topic of part-time jobs. They use relevant terms like 'reduce the burden', 'difficulties', and 'save money'. The vocabulary is adequate for the task, though not particularly wide or nuanced.\\n\\n**Pronunciation Clarity:** This cannot be assessed from a transcript.\\n\\n**Coherence and Organization:** This is a key strength of the response. The student clearly structures their argument using discourse markers ('On the one hand', 'Moreover', 'But on the other hand'). They present a main idea and support it with a couple of logically connected points, demonstrating the ability to link a series of elements into a coherent sequence.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The student demonstrates a solid B1 level of proficiency. \n\n**Fluency:** The response is delivered at a fairly even tempo without significant pauses that would disrupt the flow. The student can keep going comprehensibly, linking ideas into a connected discourse. \n\n**Grammar Accuracy:** There is a good degree of grammatical control. Sentence structures are generally simple but correct (e.g., 'I think it is important for...', 'it can help students to...'). There are minor, non-impeding errors typical of this level, such as 'reduce the burden to their family' (instead of 'on') and 'by their own' (instead of 'on their own'), but these do not hinder communication.\n\n**Vocabulary Range:** The student has a sufficient vocabulary range to express their opinion on the topic of part-time jobs. They use relevant terms like 'reduce the burden', 'difficulties', and 'save money'. The vocabulary is adequate for the task, though not particularly wide or nuanced.\n\n**Pronunciation Clarity:** This cannot be assessed from a transcript.\n\n**Coherence and Organization:** This is a key strength of the response. The student clearly structures their argument using discourse markers ('On the one hand', 'Moreover', 'But on the other hand'). They present a main idea and support it with a couple of logically connected points, demonstrating the ability to link a series of elements into a coherent sequence."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"The student demonstrates a reasonable level of fluency, with the ability to express ideas about part-time jobs clearly, although there are some hesitations and incomplete thoughts. The grammar is mostly accurate, with some minor errors, such as 'making a life by their own' which should be 'on their own.' The vocabulary range is adequate for the topic, using phrases like 'reduce the burden' and 'help their families,' but it lacks more varied expressions. Pronunciation is generally clear, allowing for understanding, but may have some minor issues that could affect clarity. The response is somewhat coherent and organized, presenting a balanced view with 'on the one hand' and 'on the other hand,' but it trails off, indicating a lack of completion in thought.\"\n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "The student demonstrates a reasonable level of fluency, with the ability to express ideas about part-time jobs clearly, although there are some hesitations and incomplete thoughts. The grammar is mostly accurate, with some minor errors, such as 'making a life by their own' which should be 'on their own.' The vocabulary range is adequate for the topic, using phrases like 'reduce the burden' and 'help their families,' but it lacks more varied expressions. Pronunciation is generally clear, allowing for understanding, but may have some minor issues that could affect clarity. The response is somewhat coherent and organized, presenting a balanced view with 'on the one hand' and 'on the other hand,' but it trails off, indicating a lack of completion in thought."
+      },
+      "label": "B1"
+    }
+  ],
+  "round2": [
+    {
+      "model": "gpt4o",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"I kept the B1 label as all examiners, including myself, agree on the B1 level based on the evidence provided. The speaker demonstrates adequate fluency, grammar accuracy, vocabulary range, and coherence typical of a B1 level. The minor errors and incomplete ending do not significantly detract from the overall assessment, and the arguments presented by other examiners align with my initial judgment.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "I kept the B1 label as all examiners, including myself, agree on the B1 level based on the evidence provided. The speaker demonstrates adequate fluency, grammar accuracy, vocabulary range, and coherence typical of a B1 level. The minor errors and incomplete ending do not significantly detract from the overall assessment, and the arguments presented by other examiners align with my initial judgment."
+      },
+      "updated_label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the other examiners' judgments, I maintain my B1 assessment as all evaluators reached the same conclusion with consistent reasoning. The consensus confirms that this response demonstrates solid B1 characteristics: adequate fluency with natural discourse flow, good control of basic grammatical structures with only minor non-impeding errors ('by their own', 'burden to their family'), sufficient vocabulary range for the topic, and strong coherence through effective use of discourse markers ('On the one hand', 'Moreover', 'But on the other hand'). The speaker successfully presents a structured argument on a familiar topic, which aligns perfectly with B1 descriptors for independent user level proficiency.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the other examiners' judgments, I maintain my B1 assessment as all evaluators reached the same conclusion with consistent reasoning. The consensus confirms that this response demonstrates solid B1 characteristics: adequate fluency with natural discourse flow, good control of basic grammatical structures with only minor non-impeding errors ('by their own', 'burden to their family'), sufficient vocabulary range for the topic, and strong coherence through effective use of discourse markers ('On the one hand', 'Moreover', 'But on the other hand'). The speaker successfully presents a structured argument on a familiar topic, which aligns perfectly with B1 descriptors for independent user level proficiency."
+      },
+      "updated_label": "B1"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"updated_label\": \"B1\",\n  \"reason\": \"I will maintain my B1 label. The other examiners' judgments strongly align with my own, creating a clear consensus. We all identified the same key B1 characteristics: the ability to structure a coherent argument using discourse markers ('On the one hand', 'Moreover'), maintain a comprehensible flow, use adequate topic-specific vocabulary ('reduce the burden'), and demonstrate good control over basic grammatical structures despite predictable, non-impeding errors ('by their own'). The other evaluations did not present any evidence to suggest the speaker is operating at a higher or lower level; instead, they confirmed my initial assessment of a solid B1 performance.\"\n}\n```",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "I will maintain my B1 label. The other examiners' judgments strongly align with my own, creating a clear consensus. We all identified the same key B1 characteristics: the ability to structure a coherent argument using discourse markers ('On the one hand', 'Moreover'), maintain a comprehensible flow, use adequate topic-specific vocabulary ('reduce the burden'), and demonstrate good control over basic grammatical structures despite predictable, non-impeding errors ('by their own'). The other evaluations did not present any evidence to suggest the speaker is operating at a higher or lower level; instead, they confirmed my initial assessment of a solid B1 performance."
+      },
+      "updated_label": "B1"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the arguments from other examiners, I maintain my B1 label as the evidence presented aligns with my initial assessment. The speaker demonstrates reasonable fluency and coherence, with adequate vocabulary and grammar for the B1 level. The minor errors noted do not impede understanding, and the overall structure of the response is logical and organized. The other examiners' observations support this conclusion, confirming that the speaker's abilities are consistent with B1 proficiency.\" \n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the arguments from other examiners, I maintain my B1 label as the evidence presented aligns with my initial assessment. The speaker demonstrates reasonable fluency and coherence, with adequate vocabulary and grammar for the B1 level. The minor errors noted do not impede understanding, and the overall structure of the response is logical and organized. The other examiners' observations support this conclusion, confirming that the speaker's abilities are consistent with B1 proficiency."
+      },
+      "updated_label": "B1"
+    }
+  ],
+  "majority_vote": {
+    "B1": 4
+  },
+  "final_label": "B1",
+  "sample_index": 2,
+  "audio_path": "/home/ap4617/MultiLLMDebate/data/audio/ICNALE_SM_CHN_N600/SM_CHN_PTJ1_003_B1_1.mp3",
+  "ground_truth": "B1"
+}
+
+{
+  "round1": [
+    {
+      "model": "gpt4o",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a B1 level of proficiency based on several factors. In terms of fluency, the response is generally smooth, though there are some hesitations and minor disruptions in the flow of ideas. The grammar accuracy is mostly correct, with some minor errors such as 'I'm flying for a part-time job' which seems to be a misstatement, possibly intended to mean 'I'm applying for a part-time job.' The vocabulary range is adequate for expressing personal opinions and experiences, though it remains somewhat limited and repetitive, as seen in the repeated use of 'part-time job.' Pronunciation is generally clear, with most words being easily understandable, though there may be occasional mispronunciations that do not significantly hinder comprehension. Coherence and organization are present, with the speaker providing a clear opinion and supporting it with examples, though the connection between ideas could be more explicitly articulated. Overall, the response fits the B1 level, where the speaker can handle familiar topics and express opinions with some detail.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a B1 level of proficiency based on several factors. In terms of fluency, the response is generally smooth, though there are some hesitations and minor disruptions in the flow of ideas. The grammar accuracy is mostly correct, with some minor errors such as 'I'm flying for a part-time job' which seems to be a misstatement, possibly intended to mean 'I'm applying for a part-time job.' The vocabulary range is adequate for expressing personal opinions and experiences, though it remains somewhat limited and repetitive, as seen in the repeated use of 'part-time job.' Pronunciation is generally clear, with most words being easily understandable, though there may be occasional mispronunciations that do not significantly hinder comprehension. Coherence and organization are present, with the speaker providing a clear opinion and supporting it with examples, though the connection between ideas could be more explicitly articulated. Overall, the response fits the B1 level, where the speaker can handle familiar topics and express opinions with some detail."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"label\": \"A2\",\n  \"reason\": \"This response demonstrates A2 level proficiency with some strengths but notable limitations. **Fluency**: The speaker maintains basic communicative flow but shows hesitation and some awkward phrasing ('I'm flying for a part-time job' instead of 'looking for'). **Grammar accuracy**: Contains several errors including incorrect verb usage ('flying' for 'looking'), inconsistent pronoun reference (shifts from 'I' to 'my friends' to 'she' without clear connections), and basic sentence structures. However, the overall meaning is comprehensible. **Vocabulary range**: Uses simple, everyday vocabulary appropriate for the topic (part-time job, money, travel, company) but lacks variety and sophistication. The lexical error 'flying for' suggests limited vocabulary control. **Pronunciation clarity**: While the transcript suggests generally clear pronunciation since the content is understandable, some minor issues may be present. **Coherence and organization**: Shows basic ability to present a point with supporting example (friend's experience) but the logical flow is somewhat unclear due to pronoun confusion and abrupt topic shifts. The conclusion is appropriately simple. The response successfully communicates the main idea about part-time jobs being beneficial, using a personal example, which aligns with A2 descriptors for handling routine social exchanges and describing experiences.\"\n}",
+      "parsed": {
+        "label": "A2",
+        "reason": "This response demonstrates A2 level proficiency with some strengths but notable limitations. **Fluency**: The speaker maintains basic communicative flow but shows hesitation and some awkward phrasing ('I'm flying for a part-time job' instead of 'looking for'). **Grammar accuracy**: Contains several errors including incorrect verb usage ('flying' for 'looking'), inconsistent pronoun reference (shifts from 'I' to 'my friends' to 'she' without clear connections), and basic sentence structures. However, the overall meaning is comprehensible. **Vocabulary range**: Uses simple, everyday vocabulary appropriate for the topic (part-time job, money, travel, company) but lacks variety and sophistication. The lexical error 'flying for' suggests limited vocabulary control. **Pronunciation clarity**: While the transcript suggests generally clear pronunciation since the content is understandable, some minor issues may be present. **Coherence and organization**: Shows basic ability to present a point with supporting example (friend's experience) but the logical flow is somewhat unclear due to pronoun confusion and abrupt topic shifts. The conclusion is appropriately simple. The response successfully communicates the main idea about part-time jobs being beneficial, using a personal example, which aligns with A2 descriptors for handling routine social exchanges and describing experiences."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"label\": \"A2\",\n  \"reason\": \"The student's response aligns with the A2 level. \\n\\n**Fluency:** The speaker can produce short, simple phrases and sentences linked with basic connectors like 'and' and 'because'. However, the flow is hesitant and disjointed at the beginning ('now I'm flying for a part-time job and my friends have helped from a part-time job'), indicating difficulty in formulating thoughts smoothly.\\n\\n**Grammar Accuracy:** There is evidence of control over simple sentence structures, but systematic errors are present. Examples include missing prepositions ('I agree the point' instead of 'I agree with the point'), awkward phrasing ('helped from a part-time job'), and slightly unnatural tense use ('She now has earned'). These errors are characteristic of an A2 speaker who can convey meaning but has not yet mastered basic grammatical rules.\\n\\n**Vocabulary Range:** The vocabulary is limited to familiar, everyday topics like 'part-time job', 'friends', 'school', 'money', and 'travel'. There is significant repetition of 'part-time job'. The likely misuse of 'flying' for 'applying' further demonstrates a limited lexical range.\\n\\n**Pronunciation Clarity:** While pronunciation cannot be fully assessed from a transcript, the word choice of 'flying' instead of a more logical verb like 'applying' suggests a potential phonological confusion that could impact listener understanding.\\n\\n**Coherence and Organization:** The response has a basic, logical structure: a statement of agreement, a supporting example about a friend, and a simple conclusion. The student uses simple linking words to connect ideas, which is typical for the A2 level.\"\n}\n```",
+      "parsed": {
+        "label": "A2",
+        "reason": "The student's response aligns with the A2 level. \n\n**Fluency:** The speaker can produce short, simple phrases and sentences linked with basic connectors like 'and' and 'because'. However, the flow is hesitant and disjointed at the beginning ('now I'm flying for a part-time job and my friends have helped from a part-time job'), indicating difficulty in formulating thoughts smoothly.\n\n**Grammar Accuracy:** There is evidence of control over simple sentence structures, but systematic errors are present. Examples include missing prepositions ('I agree the point' instead of 'I agree with the point'), awkward phrasing ('helped from a part-time job'), and slightly unnatural tense use ('She now has earned'). These errors are characteristic of an A2 speaker who can convey meaning but has not yet mastered basic grammatical rules.\n\n**Vocabulary Range:** The vocabulary is limited to familiar, everyday topics like 'part-time job', 'friends', 'school', 'money', and 'travel'. There is significant repetition of 'part-time job'. The likely misuse of 'flying' for 'applying' further demonstrates a limited lexical range.\n\n**Pronunciation Clarity:** While pronunciation cannot be fully assessed from a transcript, the word choice of 'flying' instead of a more logical verb like 'applying' suggests a potential phonological confusion that could impact listener understanding.\n\n**Coherence and Organization:** The response has a basic, logical structure: a statement of agreement, a supporting example about a friend, and a simple conclusion. The student uses simple linking words to connect ideas, which is typical for the A2 level."
+      },
+      "label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"The student demonstrates a reasonable level of fluency, with the ability to express ideas and opinions about part-time jobs. However, there are some hesitations and repetitions that affect the overall fluency. The grammar is mostly accurate, but there are minor issues, such as the phrase 'helped from a part-time job,' which is awkwardly constructed. The vocabulary range is adequate for the topic, with terms like 'part-time job,' 'learned,' and 'travel,' but it lacks more varied expressions or synonyms. Pronunciation clarity is not assessable from the transcript, but the structure suggests that the student can articulate their thoughts. Coherence and organization are present, as the response follows a logical progression from agreement to personal experience and conclusion, but the ideas could be more clearly delineated with better transitions.\" \n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "The student demonstrates a reasonable level of fluency, with the ability to express ideas and opinions about part-time jobs. However, there are some hesitations and repetitions that affect the overall fluency. The grammar is mostly accurate, but there are minor issues, such as the phrase 'helped from a part-time job,' which is awkwardly constructed. The vocabulary range is adequate for the topic, with terms like 'part-time job,' 'learned,' and 'travel,' but it lacks more varied expressions or synonyms. Pronunciation clarity is not assessable from the transcript, but the structure suggests that the student can articulate their thoughts. Coherence and organization are present, as the response follows a logical progression from agreement to personal experience and conclusion, but the ideas could be more clearly delineated with better transitions."
+      },
+      "label": "B1"
+    }
+  ],
+  "round2": [
+    {
+      "model": "gpt4o",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' arguments, I agree that the response aligns more closely with the A2 level. The speaker demonstrates basic fluency with simple phrases and connectors, but the flow is hesitant and disjointed. Grammar errors, such as incorrect verb usage and awkward phrasing, are more characteristic of A2 proficiency. The vocabulary is limited and repetitive, and the misuse of 'flying' suggests limited lexical control. While the response is coherent, the logical flow is somewhat unclear due to pronoun confusion and abrupt topic shifts. These factors align with A2 descriptors, indicating the speaker can handle routine exchanges but struggles with more complex language use.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' arguments, I agree that the response aligns more closely with the A2 level. The speaker demonstrates basic fluency with simple phrases and connectors, but the flow is hesitant and disjointed. Grammar errors, such as incorrect verb usage and awkward phrasing, are more characteristic of A2 proficiency. The vocabulary is limited and repetitive, and the misuse of 'flying' suggests limited lexical control. While the response is coherent, the logical flow is somewhat unclear due to pronoun confusion and abrupt topic shifts. These factors align with A2 descriptors, indicating the speaker can handle routine exchanges but struggles with more complex language use."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' arguments, I maintain my A2 assessment. While gpt4o and grok argue for B1 based on general fluency and topic handling, they underestimate the significance of the systematic errors present. The critical issues include: fundamental lexical confusion ('flying for a part-time job' instead of 'looking for/applying for'), basic grammatical errors ('I agree the point' missing preposition, awkward 'helped from a part-time job'), and unclear pronoun reference that disrupts coherence. These are characteristic A2 limitations where meaning is conveyed but basic linguistic control is inconsistent. B1 speakers should demonstrate more reliable control of familiar structures and clearer expression of connected ideas. The gemini examiner's analysis aligns with mine, correctly identifying these systematic errors as A2 markers rather than minor B1 slips.\"\n}",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' arguments, I maintain my A2 assessment. While gpt4o and grok argue for B1 based on general fluency and topic handling, they underestimate the significance of the systematic errors present. The critical issues include: fundamental lexical confusion ('flying for a part-time job' instead of 'looking for/applying for'), basic grammatical errors ('I agree the point' missing preposition, awkward 'helped from a part-time job'), and unclear pronoun reference that disrupts coherence. These are characteristic A2 limitations where meaning is conveyed but basic linguistic control is inconsistent. B1 speakers should demonstrate more reliable control of familiar structures and clearer expression of connected ideas. The gemini examiner's analysis aligns with mine, correctly identifying these systematic errors as A2 markers rather than minor B1 slips."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"updated_label\": \"A2\",\n  \"reason\": \"After reviewing the other examiners' judgments, I am maintaining my A2 rating. The arguments for B1 from gpt4o and grok describe the errors as 'minor' and the fluency as 'generally smooth' or 'reasonable'. I find this to be an overestimation. The opening phrase, 'now I'm flying for a part-time job and my friends have helped from a part-time job,' is significantly disjointed and contains both lexical and grammatical errors that impede smooth communication. These errors, such as the misuse of 'flying' for 'applying', the missing preposition in 'agree the point', and the awkward structure of 'helped from a part-time job', are not isolated slips but are indicative of an A2 level where basic grammatical structures are not yet fully controlled. Claude's A2 analysis aligns with my own, correctly identifying the limited vocabulary, basic sentence structures, and awkward phrasing as key indicators of this level. While the speaker successfully conveys a simple idea with a supporting example, the quality of the language used firmly places the performance within the A2 band, not at the B1 threshold where a speaker would exhibit greater grammatical control and fluency on such a familiar topic.\"\n}\n```",
+      "parsed": {
+        "updated_label": "A2",
+        "reason": "After reviewing the other examiners' judgments, I am maintaining my A2 rating. The arguments for B1 from gpt4o and grok describe the errors as 'minor' and the fluency as 'generally smooth' or 'reasonable'. I find this to be an overestimation. The opening phrase, 'now I'm flying for a part-time job and my friends have helped from a part-time job,' is significantly disjointed and contains both lexical and grammatical errors that impede smooth communication. These errors, such as the misuse of 'flying' for 'applying', the missing preposition in 'agree the point', and the awkward structure of 'helped from a part-time job', are not isolated slips but are indicative of an A2 level where basic grammatical structures are not yet fully controlled. Claude's A2 analysis aligns with my own, correctly identifying the limited vocabulary, basic sentence structures, and awkward phrasing as key indicators of this level. While the speaker successfully conveys a simple idea with a supporting example, the quality of the language used firmly places the performance within the A2 band, not at the B1 threshold where a speaker would exhibit greater grammatical control and fluency on such a familiar topic."
+      },
+      "updated_label": "A2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the other examiners' arguments, I maintain my B1 label because the student demonstrates a reasonable level of fluency and coherence in expressing their ideas about part-time jobs. While there are some grammatical errors and awkward phrasing, the overall structure and ability to articulate thoughts align more closely with B1 descriptors. The other examiners' A2 assessments focus on minor errors and hesitations, but I believe the student's ability to provide a personal example and express a clear opinion indicates a higher proficiency level.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the other examiners' arguments, I maintain my B1 label because the student demonstrates a reasonable level of fluency and coherence in expressing their ideas about part-time jobs. While there are some grammatical errors and awkward phrasing, the overall structure and ability to articulate thoughts align more closely with B1 descriptors. The other examiners' A2 assessments focus on minor errors and hesitations, but I believe the student's ability to provide a personal example and express a clear opinion indicates a higher proficiency level."
+      },
+      "updated_label": "B1"
+    }
+  ],
+  "majority_vote": {
+    "A2": 3,
+    "B1": 1
+  },
+  "final_label": "A2",
+  "sample_index": 3,
+  "audio_path": "/home/ap4617/MultiLLMDebate/data/audio/ICNALE_SM_CHN_N600/SM_CHN_PTJ1_004_B1_2.mp3",
+  "ground_truth": "B1"
+}
+
+{
+  "round1": [
+    {
+      "model": "gpt4o",
+      "raw": "```json\n{\n  \"label\": \"B1\",\n  \"reason\": \"The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker is able to express ideas and opinions on familiar topics like part-time jobs for college students, with some pauses but generally maintaining a coherent flow. Grammar accuracy is mostly correct, with appropriate use of present simple tense and conjunctions, though there are minor errors such as 'it will solve this problem' which could be more accurately expressed as 'it can help solve this problem.' The vocabulary range is adequate for the topic, using phrases like 'widen their horizons' and 'get some experience,' which are appropriate for a B1 level. Pronunciation is generally clear, with most words being easily understood, though there may be occasional mispronunciations typical of this level. Coherence and organization are present, with the speaker providing a structured argument with clear points, though the conclusion is cut off, indicating a need for more practice in completing thoughts fully.\"\n}\n```",
+      "parsed": {
+        "label": "B1",
+        "reason": "The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker is able to express ideas and opinions on familiar topics like part-time jobs for college students, with some pauses but generally maintaining a coherent flow. Grammar accuracy is mostly correct, with appropriate use of present simple tense and conjunctions, though there are minor errors such as 'it will solve this problem' which could be more accurately expressed as 'it can help solve this problem.' The vocabulary range is adequate for the topic, using phrases like 'widen their horizons' and 'get some experience,' which are appropriate for a B1 level. Pronunciation is generally clear, with most words being easily understood, though there may be occasional mispronunciations typical of this level. Coherence and organization are present, with the speaker providing a structured argument with clear points, though the conclusion is cut off, indicating a need for more practice in completing thoughts fully."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"This response demonstrates clear B1 level competency across multiple criteria. **Fluency**: The speaker maintains a steady flow with natural discourse markers ('first', 'second', 'last but not least') and can express ideas continuously despite the incomplete ending. **Grammar accuracy**: Shows good control of complex structures including conditional sentences ('by taking a part-time job, it will solve this problem'), relative clauses ('you can't get knowledge all in class'), and modal verbs ('you must get'). While there are minor errors like pronoun reference issues ('it will solve this problem' - unclear antecedent), the overall grammatical control is solid for B1. **Vocabulary range**: Demonstrates appropriate academic vocabulary ('widen their horizons', 'experience', 'knowledge') and can express abstract concepts. The range is sufficient for the topic without being overly sophisticated. **Pronunciation clarity**: The transcript suggests clear articulation with no major communication breakdowns. **Coherence and organization**: Well-structured argument using clear sequencing devices, logical progression from financial needs to experience to knowledge acquisition. Each point builds meaningfully on the thesis. The response shows the ability to sustain a coherent argument on a familiar academic topic, which is characteristic of B1 level performance.\"\n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "This response demonstrates clear B1 level competency across multiple criteria. **Fluency**: The speaker maintains a steady flow with natural discourse markers ('first', 'second', 'last but not least') and can express ideas continuously despite the incomplete ending. **Grammar accuracy**: Shows good control of complex structures including conditional sentences ('by taking a part-time job, it will solve this problem'), relative clauses ('you can't get knowledge all in class'), and modal verbs ('you must get'). While there are minor errors like pronoun reference issues ('it will solve this problem' - unclear antecedent), the overall grammatical control is solid for B1. **Vocabulary range**: Demonstrates appropriate academic vocabulary ('widen their horizons', 'experience', 'knowledge') and can express abstract concepts. The range is sufficient for the topic without being overly sophisticated. **Pronunciation clarity**: The transcript suggests clear articulation with no major communication breakdowns. **Coherence and organization**: Well-structured argument using clear sequencing devices, logical progression from financial needs to experience to knowledge acquisition. Each point builds meaningfully on the thesis. The response shows the ability to sustain a coherent argument on a familiar academic topic, which is characteristic of B1 level performance."
+      },
+      "label": "B1"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"label\": \"B2\",\n  \"reason\": \"The student is placed at a B2 level. The response is well-organized and demonstrates a good degree of fluency and control.\\n\\n**Coherence and organization:** This is a key strength. The argument is clearly and logically structured using discourse markers ('first', 'second', 'last but not least'). This systematic approach to presenting points is characteristic of a B2 speaker who can develop a clear argument.\\n\\n**Fluency:** The student speaks smoothly without significant hesitation. The ideas are connected fluidly, and the pace allows for a clear and effective delivery of a structured opinion.\\n\\n**Vocabulary range:** The vocabulary is appropriate and effective for the topic. The student uses good collocations like 'solve this problem' and 'get some experience.' The use of the idiomatic phrase 'widen their horizons' is a strong indicator of B2-level competence, showing an ability to use less common, figurative language correctly.\\n\\n**Grammar accuracy:** The grammatical control is generally high. Sentences are well-formed ('I do agree that...', 'many students can get some experience...'). There are minor instances of slightly unnatural phrasing (e.g., 'you can't get knowledge all in class' instead of 'you can't get all your knowledge in class'; 'help their lives'), but these do not impede communication and are typical of a B2 speaker who has good general control but has not yet achieved C1-level precision.\\n\\n**Pronunciation clarity:** This cannot be assessed from a written transcript.\"\n}\n```",
+      "parsed": {
+        "label": "B2",
+        "reason": "The student is placed at a B2 level. The response is well-organized and demonstrates a good degree of fluency and control.\n\n**Coherence and organization:** This is a key strength. The argument is clearly and logically structured using discourse markers ('first', 'second', 'last but not least'). This systematic approach to presenting points is characteristic of a B2 speaker who can develop a clear argument.\n\n**Fluency:** The student speaks smoothly without significant hesitation. The ideas are connected fluidly, and the pace allows for a clear and effective delivery of a structured opinion.\n\n**Vocabulary range:** The vocabulary is appropriate and effective for the topic. The student uses good collocations like 'solve this problem' and 'get some experience.' The use of the idiomatic phrase 'widen their horizons' is a strong indicator of B2-level competence, showing an ability to use less common, figurative language correctly.\n\n**Grammar accuracy:** The grammatical control is generally high. Sentences are well-formed ('I do agree that...', 'many students can get some experience...'). There are minor instances of slightly unnatural phrasing (e.g., 'you can't get knowledge all in class' instead of 'you can't get all your knowledge in class'; 'help their lives'), but these do not impede communication and are typical of a B2 speaker who has good general control but has not yet achieved C1-level precision.\n\n**Pronunciation clarity:** This cannot be assessed from a written transcript."
+      },
+      "label": "B2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"label\": \"B1\",\n  \"reason\": \"The student demonstrates a reasonable level of fluency, with a clear attempt to express their ideas, although there are some pauses and hesitations. The grammar is mostly accurate, with a few minor errors such as 'it will solve this problem and can help their lives' which could be more clearly structured. The vocabulary range is adequate for the topic, using phrases like 'widen their horizons' and 'get some experience', but it lacks more varied expressions. Pronunciation is generally clear, allowing for understanding, but may have some minor issues that could affect clarity. The response is coherent and organized, with a logical progression of ideas, although it could benefit from a more structured conclusion.\" \n}",
+      "parsed": {
+        "label": "B1",
+        "reason": "The student demonstrates a reasonable level of fluency, with a clear attempt to express their ideas, although there are some pauses and hesitations. The grammar is mostly accurate, with a few minor errors such as 'it will solve this problem and can help their lives' which could be more clearly structured. The vocabulary range is adequate for the topic, using phrases like 'widen their horizons' and 'get some experience', but it lacks more varied expressions. Pronunciation is generally clear, allowing for understanding, but may have some minor issues that could affect clarity. The response is coherent and organized, with a logical progression of ideas, although it could benefit from a more structured conclusion."
+      },
+      "label": "B1"
+    }
+  ],
+  "round2": [
+    {
+      "model": "gpt4o",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the other examiners' arguments, I maintain the B1 label. While gemini argues for a B2 level, the evidence provided aligns more closely with B1 characteristics. The speaker demonstrates adequate fluency, grammar, and vocabulary for B1, with some minor errors and a need for more varied expressions. The coherence and organization are strong, but the conclusion is incomplete, which is more typical of B1. The use of idiomatic phrases like 'widen their horizons' is noted, but overall, the performance does not consistently reach B2 level.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the other examiners' arguments, I maintain the B1 label. While gemini argues for a B2 level, the evidence provided aligns more closely with B1 characteristics. The speaker demonstrates adequate fluency, grammar, and vocabulary for B1, with some minor errors and a need for more varied expressions. The coherence and organization are strong, but the conclusion is incomplete, which is more typical of B1. The use of idiomatic phrases like 'widen their horizons' is noted, but overall, the performance does not consistently reach B2 level."
+      },
+      "updated_label": "B1"
+    },
+    {
+      "model": "claude",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the other judgments, I maintain my B1 assessment. While Gemini makes valid points about the strong organization and use of 'widen their horizons,' the overall linguistic performance doesn't consistently reach B2 level. The grammatical errors are more significant than Gemini suggests - 'it will solve this problem' has unclear pronoun reference, 'help their lives' is unnatural phrasing, and 'you can't get knowledge all in class' shows word order issues. These aren't just minor imprecisions but reflect B1-level control. The vocabulary, while adequate, relies heavily on common academic phrases rather than demonstrating the more sophisticated range expected at B2. The incomplete ending also suggests difficulty sustaining extended discourse. Both GPT-4o and Grok concur with B1, and their evidence aligns with systematic B1 characteristics: good basic control with noticeable errors that don't impede communication.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the other judgments, I maintain my B1 assessment. While Gemini makes valid points about the strong organization and use of 'widen their horizons,' the overall linguistic performance doesn't consistently reach B2 level. The grammatical errors are more significant than Gemini suggests - 'it will solve this problem' has unclear pronoun reference, 'help their lives' is unnatural phrasing, and 'you can't get knowledge all in class' shows word order issues. These aren't just minor imprecisions but reflect B1-level control. The vocabulary, while adequate, relies heavily on common academic phrases rather than demonstrating the more sophisticated range expected at B2. The incomplete ending also suggests difficulty sustaining extended discourse. Both GPT-4o and Grok concur with B1, and their evidence aligns with systematic B1 characteristics: good basic control with noticeable errors that don't impede communication."
+      },
+      "updated_label": "B1"
+    },
+    {
+      "model": "gemini",
+      "raw": "```json\n{\n  \"updated_label\": \"B2\",\n  \"reason\": \"I am maintaining my B2 rating. The other examiners have rated the sample as B1, but their reasoning does not sufficiently counter the strong evidence for B2. My decision is based on the combination of several factors that, when taken together, are more characteristic of a B2 than a B1 speaker.\\n\\nFirst, the organizational structure is a key differentiator. The speaker uses a clear, systematic framework ('first', 'second', 'last but not least') to develop a coherent argument. This aligns perfectly with the B2 descriptor: \\\"can develop a clear argument, expanding and supporting his/her points of view.\\\" While a B1 speaker can link ideas, this level of systematic organization is a stronger indicator of B2.\\n\\nSecond, the vocabulary includes the idiomatic phrase 'widen their horizons'. Using such figurative language correctly is a hallmark of the B2 level, demonstrating a vocabulary range beyond the purely functional needs of B1.\\n\\nFinally, the grammatical control is high. The minor awkward phrasing ('get knowledge all in class') does not impede comprehension and is typical of a B2 speaker who has good general control but has not yet mastered C1-level nuance. The other examiners' critiques of the grammar (e.g., suggesting 'can help solve' instead of 'will solve') point to minor stylistic preferences rather than clear errors that would define the speaker at a lower level. Therefore, the overall performance, particularly the strong coherence and effective use of vocabulary, firmly places the speaker in the B2 category.\"\n}\n```",
+      "parsed": {
+        "updated_label": "B2",
+        "reason": "I am maintaining my B2 rating. The other examiners have rated the sample as B1, but their reasoning does not sufficiently counter the strong evidence for B2. My decision is based on the combination of several factors that, when taken together, are more characteristic of a B2 than a B1 speaker.\n\nFirst, the organizational structure is a key differentiator. The speaker uses a clear, systematic framework ('first', 'second', 'last but not least') to develop a coherent argument. This aligns perfectly with the B2 descriptor: \"can develop a clear argument, expanding and supporting his/her points of view.\" While a B1 speaker can link ideas, this level of systematic organization is a stronger indicator of B2.\n\nSecond, the vocabulary includes the idiomatic phrase 'widen their horizons'. Using such figurative language correctly is a hallmark of the B2 level, demonstrating a vocabulary range beyond the purely functional needs of B1.\n\nFinally, the grammatical control is high. The minor awkward phrasing ('get knowledge all in class') does not impede comprehension and is typical of a B2 speaker who has good general control but has not yet mastered C1-level nuance. The other examiners' critiques of the grammar (e.g., suggesting 'can help solve' instead of 'will solve') point to minor stylistic preferences rather than clear errors that would define the speaker at a lower level. Therefore, the overall performance, particularly the strong coherence and effective use of vocabulary, firmly places the speaker in the B2 category."
+      },
+      "updated_label": "B2"
+    },
+    {
+      "model": "grok",
+      "raw": "{\n  \"updated_label\": \"B1\",\n  \"reason\": \"After reviewing the arguments from other examiners, I maintain my B1 label as the speaker demonstrates a reasonable level of fluency and coherence, with some minor grammatical errors and a vocabulary range that is adequate but not particularly varied. While some examiners argue for a B2 label based on organization and vocabulary, I believe the overall performance still aligns more closely with B1 due to the presence of minor errors and the need for more sophisticated language use.\"\n}",
+      "parsed": {
+        "updated_label": "B1",
+        "reason": "After reviewing the arguments from other examiners, I maintain my B1 label as the speaker demonstrates a reasonable level of fluency and coherence, with some minor grammatical errors and a vocabulary range that is adequate but not particularly varied. While some examiners argue for a B2 label based on organization and vocabulary, I believe the overall performance still aligns more closely with B1 due to the presence of minor errors and the need for more sophisticated language use."
+      },
+      "updated_label": "B1"
+    }
+  ],
+  "majority_vote": {
+    "B1": 3,
+    "B2": 1
+  },
+  "final_label": "B1",
+  "sample_index": 4,
+  "audio_path": "/home/ap4617/MultiLLMDebate/data/audio/ICNALE_SM_CHN_N600/SM_CHN_PTJ1_005_B1_1.mp3",
+  "ground_truth": "B1"
+}
+
