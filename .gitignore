@@ -1,0 +1,8 @@
+# Model checkpoints — too large for GitHub
+logs/*.pt
+# Raw data
+ICNALE/
+# Python
+__pycache__/
+*.pyc
+venv/
