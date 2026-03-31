@@ -20,7 +20,7 @@ MODEL_NAME    = "facebook/wav2vec2-base"
 SAMPLE_RATE   = 16000
 MAX_AUDIO_LEN = 16000 * 60
 BATCH_SIZE    = 8
-LR            = 5e-5
+LR            = 1e-5
 EPOCHS        = 10
 K_PROTO       = 3
 SEED          = 42
@@ -83,6 +83,7 @@ class PrototypicalW2V(nn.Module):
     def __init__(self, num_classes, sim="COS"):
         super().__init__()
         self.w2v        = Wav2Vec2Model.from_pretrained(MODEL_NAME)
+        self.w2v.feature_extractor._freeze_parameters()
         self.sim        = sim
         self.prototypes = nn.Parameter(torch.randn(num_classes, K_PROTO, 768) * 0.01)
         if sim == "COS":

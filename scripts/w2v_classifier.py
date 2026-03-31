@@ -19,7 +19,7 @@ MODEL_NAME    = "facebook/wav2vec2-base"
 SAMPLE_RATE   = 16000
 MAX_AUDIO_LEN = 16000 * 60   # cap at 60 seconds
 BATCH_SIZE    = 8
-LR            = 5e-5
+LR            = 1e-5
 EPOCHS        = 10
 SEED          = 42
 
@@ -81,6 +81,7 @@ class W2VClassifier(nn.Module):
     def __init__(self, num_classes):
         super().__init__()
         self.w2v        = Wav2Vec2Model.from_pretrained(MODEL_NAME)
+        self.w2v.feature_extractor._freeze_parameters()
         self.classifier = nn.Linear(768, num_classes)
     def forward(self, input_values):
         out = self.w2v(input_values).last_hidden_state  # [B, T, 768]
