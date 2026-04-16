@@ -1,0 +1,15 @@
+{
+  "pipeline": "gpt_only",
+  "split": "val_only",
+  "n_samples": 217,
+  "skipped": 0,
+  "metrics": {
+    "ACC": 26.27,
+    "ACC_ADJ": 64.98,
+    "ACC_MC": 31.41,
+    "ACC_MC_ADJ": 60.77,
+    "RMSE": 1.456,
+    "RMSE_MC": 1.3288,
+    "PCC": 0.5504
+  }
+}

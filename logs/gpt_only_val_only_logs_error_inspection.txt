@@ -1,0 +1,356 @@
+ERROR INSPECTION REPORT
+Log file : ../logs/gpt_only_val_only_logs.jsonl
+Total errors : 160  |  Showing : 10
+============================================================
+────────────────────────────────────────────────────────────
+  Sample index : 1
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can express a basic agreement with the statement, but there is significant repetition ('he doesn't have a particular job') that disrupts the flow. Grammar accuracy is limited, with simple sentence structures and so
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker produces only one long, fragmented sentence with frequent self-repetition ("he doesn’t have a particular job" repeated five times). Hesitations and restarts indicate difficulty sustaining speech beyond very short stretches.  Grammar accuracy: Structures are limited to basic pres
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker attempts to express an opinion by providing a reason, which indicates a level of language proficiency consistent with B1. In terms of fluency, there are noticeable repetitions (particularly the phrase 'he doesn't have a particular job') which disrupt the flow of the narrative. The gramma
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. Both o3 and I agree on the A2 level due to the speaker's limited fluency, basic grammar, narrow vocabulary, and lack of coherence. The repetition and awkward phrasing indicate difficulty in sustaining speech, which aligns with 
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The competing B1 argument does not outweigh the evidence of very limited control visible in the utterance. The speaker produces only one broken, repetitive sentence, with basic connectors and multiple lexical/grammatical inaccuracies that obscure meaning. This aligns with A2 descriptors (can express
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: The evidence provided by the other examiners—highlighting excessive repetition, limited vocabulary, and significant issues with grammar and coherence—offers a more convincing alignment with an A2 performance. These issues suggest the response more closely fits the A2 descriptor for handling simple s
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 2
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can produce simple sentences and express basic ideas, but there is noticeable repetition and a lack of fluidity. Grammar accuracy is limited, with errors in sentence structure and article usage, yet the basic messa
+
+    o3               → B1 ✓
+    Reasoning: Fluency: The speaker can maintain a brief monologue and link several ideas with simple connectors such as "because" and "so." Although there are many pauses implied by the repeated restarts and some circular phrasing, the speech is continuous rather than a set of isolated sentences, matching the low
+
+    o3_mini          → A2 ✗
+    Reasoning: The student’s response uses very simple language and structure with repetitive phrasing, such as the repeated use of 'so' which limits the fluency of the response. Grammar errors are evident, including awkward phrasing and inconsistent subject references, which indicate limited control over more com
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: I maintained the A2 label because the speaker's language use is characterized by simple sentence structures, repetitive phrasing, and basic vocabulary, which aligns with A2 descriptors. While o3 argues for B1 based on the ability to connect ideas, the coherence and organization are minimal, and the 
+
+    o3               → A2 ✗  (changed from B1)
+    Reasoning: After comparing the sample with CEFR descriptors, the production is better matched to A2 than B1. Although the learner does state an opinion and use a few connectors (“because”, “so”), the speech is very short, highly repetitive, and shows very limited grammatical control and lexical range. Errors f
+
+    o3_mini          → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I found GPT-4o's evidence aligns with my own analysis. Despite o3’s B1 rating noting some connected thought, the repetitive phrasing, grammatical errors, and limited vocabulary still more strongly indicate an A2 level overall.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3': 'B1'}  wrong: {'gpt4o': 'A2', 'o3_mini': 'A2'}
+    R2: o3 changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 3
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. Fluency is limited, with frequent pauses and hesitations that disrupt the flow of speech. The speaker struggles to maintain a continuous discourse, indicating a basic level of fluency. Grammar accuracy is low, with errors in sentence structure and
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker produces only a few short, fragmented utterances with many pauses ("Smoking is... Smoking always...") and self-corrections. Speech is very hesitant and broken, characteristic of an A2 level rather than the more continuous flow expected at B1.
+Grammar accuracy: Frequent and basic
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. Fluency is evident in the attempt to extend the response with linked ideas, though there are noticeable pauses and hesitations (e.g., repeated phrases and ellipses) that interrupt the flow. Grammar accuracy is limited, with several structural error
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. Both my initial assessment and o3's judgment align in identifying the speaker's limited fluency, grammar accuracy, and vocabulary range, which are characteristic of A2. The speaker's fragmented speech, basic errors, and restric
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The opposing B1 argument claims the learner can maintain connected discourse, yet the transcript shows only fragmented clauses, unfinished sentences, and minimal cohesive devices. The speaker cannot sustain a clear line of thought beyond very short, error-filled statements. Both grammar and vocabula
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: The detailed analysis by the other examiners highlighted frequent hesitations, fragmented discourse, and grammatical errors that impede clear communication, which aligns more closely with an A2 level than B1.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 6
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can produce simple sentences and express basic opinions, but there are noticeable pauses and hesitations that disrupt the flow. Grammar accuracy is limited, with errors in sentence structure and awkward phrasing, y
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker produces only a few short sentences with frequent pauses and false starts (e.g., repetitions of “you can’t do it”). The delivery is halting and never develops into a sustained turn, which is typical of an A2 speaker who can handle very brief exchanges but struggles to maintain f
+
+    o3_mini          → A2 ✗
+    Reasoning: The speaker attempts to express an opinion but the response is hampered by significant issues in grammar, vocabulary, and coherence. Fluency is affected by fragmented sentence structures and a lack of smooth transitions between ideas. Grammar accuracy is low, with several errors and improper word or
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. The evidence provided by others aligns with my initial assessment, highlighting issues in fluency, grammar accuracy, vocabulary range, and coherence. The speaker's ability to express a simple opinion is consistent with A2, desp
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: Both peer evaluations align with my original assessment, citing the same issues of limited fluency, frequent grammatical breakdowns, restricted vocabulary, and only rudimentary coherence. No new evidence suggests the performance drops to A1 (the main idea is still recoverable) or rises to B1 (sustai
+
+    o3_mini          → A2 ✗  (unchanged)
+    Reasoning: After reviewing the additional arguments, I maintain the A2 label. The evidence shows that the speaker employs simple language, limited grammar control, and basic vocabulary with frequent errors, which aligns with an A2 level of language proficiency.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: All models wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 7
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can express a basic opinion and provide simple reasons, but there are noticeable hesitations and repetitions ('smoking smoking') that disrupt the flow. Grammar accuracy is limited, with errors in verb forms ('I ver
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker can produce a short utterance and connect ideas with basic linkers such as “and” and “because,” but the delivery is very brief, fragmented and repetitive, indicating only limited ability to sustain discourse beyond a single-sentence stretch.  Grammar accuracy: The utterance cont
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. The fluency is moderate, with noticeable hesitations, repetitions, and informal elements such as fillers ('so like'), which indicate some difficulty in maintaining a fully fluid speech. Grammar accuracy is inconsistent, with several errors such as 
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. Both o3 and I agree on the A2 level, citing similar reasons such as limited fluency, basic grammar errors, and restricted vocabulary. The argument for B1 by o3_mini does not provide stronger evidence, as it acknowledges the sam
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The sample lacks the grammatical control, lexical range and coherent development expected at B1. It is essentially one long, repetitive sentence with pervasive basic errors (e.g., “I very hate,” “it is a very harm people’s body”) and extremely limited vocabulary. Although the speaker links ideas wit
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: Upon reconsideration and in light of the detailed evidence provided by the other examiners, the speaker's performance aligns more with an A2 level. The utterance shows basic communication of an opinion using simple language, accompanied by significant grammatical errors, limited vocabulary, and repe
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 8
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker can express opinions and ideas, although there are some hesitations and repetitions that affect the flow. Grammar accuracy is inconsistent, with errors in sentence structure and prepositions, but the overall meaning
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker can produce a short series of simple sentences without long pauses, but there is frequent repetition and several unfinished or fragmentary clauses (e.g., “I like to think about what it is.”). The flow is halting and ideas are often restarted, which is typical of an A2 speaker ra
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. The response shows an attempt to express a personal opinion on smoking with some explanation, which is typical at the B1 level. Fluency is affected by hesitations and repeated, often contradictory ideas that hinder understanding. Grammar accuracy i
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (changed from B1)
+    Reasoning: After reviewing the other examiners' arguments, I agree that the speaker's performance aligns more closely with A2. The frequent repetition, unfinished clauses, and systematic grammatical errors suggest limited control over basic structures, which obscures meaning. The vocabulary is very limited and
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The discourse is highly repetitive and often unintelligible (e.g., “Thank you for smoking this,” “It’s free to be on the face”), showing breakdowns that go beyond the lapses tolerated at B1. The speaker strings together very short, simple sentences with almost no cohesive devices, and the argument i
+
+    o3_mini          → B1 ✓  (unchanged)
+    Reasoning: After reconsideration, the speaker's ability to express opinions and provide reasons supports a B1 level despite issues in fluency and organization. While one examiner argued for A2 due to repetitive errors, the overall attempt to structure an argument and differentiate contexts (public vs. private)
+
+  [ VOTE ]  {'A2': 2, 'B1': 1}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'gpt4o': 'B1', 'o3_mini': 'B1'}  wrong: {'o3': 'A2'}
+    R2: gpt4o changed B1→A2 (worsened ✗)
+    VOTE: distribution={'A2': 2, 'B1': 1}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 9
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can produce simple sentences and express basic ideas, but there are noticeable pauses and hesitations that disrupt the flow. Grammar accuracy is limited, with frequent errors in sentence structure and word choice, 
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker can produce a short sequence of phrases and clauses linked with very basic connectors such as “because” and “for example.” However, the delivery appears halting and fragmented, with many false starts and unfinished thoughts, typical of the lower basic user band.
+
+Grammar accurac
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker attempts to articulate an opinion about smoking and provides attempts at supporting points, which is characteristic of a B1 level. In terms of fluency, the speech shows an effort to produce connected ideas, but there are noticeable hesitations and unnecessarily repeated phrases that comp
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. Both o3 and I agree on the A2 level due to the speaker's limited grammatical accuracy, basic vocabulary range, and minimal coherence. The o3_mini argument for B1 is less convincing because the speaker's frequent errors and inap
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The other examiners’ A2 rationale matches the evidence: the speaker relies on very short, halting sentences with limited connectors, shows frequent grammatical and lexical errors that often obscure meaning, and lacks coherent development. These features align with A2 descriptors of basic communicati
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: After reconsidering, the detailed evidence from other examiners highlights significant issues in grammar, vocabulary choices, and coherence that align more closely with an A2 level, despite my initial inclination towards B1.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 10
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the response is marked by frequent hesitations, fillers ('uh', 'um'), and repetitions, which disrupt the flow and make it difficult to follow. Grammar accuracy is limited, with fragmented sentences and unclear structures that 
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker can produce short stretches of speech but is heavily burdened by frequent pauses, fillers ("uh, um"), and restarts. The flow is halting and requires considerable effort to follow, which is typical of an A2 speaker still developing automaticity.
+Grammar accuracy: Sentence constru
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. They attempt to express an opinion and describe a process, but their speech contains frequent hesitations, repetitions, and filler words that disrupt the overall flow. The grammar is simple and repetitive, with several phrases that are unclear or u
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. The evidence provided by o3 aligns with my initial assessment, highlighting frequent pauses, fillers, and disjointed speech that disrupts fluency, which is characteristic of A2. The grammar and vocabulary are basic and often in
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The opposing B1 argument does not sufficiently demonstrate that the speaker achieves the connected, coherent discourse expected at B1. The transcript shows extremely fragmented sentences, constant hesitation, and unclear meaning; ideas are not developed beyond very basic, disjointed phrases. This fi
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: The detailed evidence from the other examiners regarding frequent hesitations, basic vocabulary, and disjointed discourse highlights more clear features of an A2 level. These points indicate a more limited language control than initially assessed, so the label is updated to A2.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 13
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can produce simple sentences and express basic ideas, but there are noticeable pauses and hesitations that disrupt the flow. Grammar accuracy is limited, with errors in sentence structure and word forms, yet the ba
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The speaker produces only a short sequence of simple sentences. There are noticeable pauses implied by repeated restarts (e.g., “If you want, if you aren’t a smoker…”). Ideas come in a list-like fashion with minimal expansion, which is typical of an A2 speaker rather than the more extended,
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker demonstrates a B1 level of proficiency. In terms of fluency, the response is delivered with some connected ideas, although there are noticeable hesitations and some awkward phrasings that mildly interrupt the flow. Grammar accuracy is inconsistent, with multiple errors such as 'causes ou
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. The evidence provided by o3 supports the A2 classification, highlighting the speaker's use of simple sentences, frequent grammatical errors, and limited vocabulary range. Although o3_mini suggests a B1 level, the argument does 
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The utterance consists of very short, loosely linked sentences with frequent grammatical errors and a limited, mostly high-frequency vocabulary. Although the speaker manages to express a clear opinion (smoking is bad), the delivery lacks the sustained, reasonably accurate, and coherently connected d
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: The evidence provided by the other examiners indicates that the speaker's use of language remains very limited, with simple sentence structures, basic vocabulary, and frequent grammatical errors. This aligns more closely with the A2 level, as the speaker mainly produces short, simple sentences with 
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────
+  Sample index : 15
+  Ground truth : B1
+  Final pred   : A2
+  Error type   : UNDER-RATED by 1 level(s)  (B1 → A2)
+
+  [ ROUND 1 — Independent judgments ]
+    gpt4o            → A2 ✗
+    Reasoning: The speaker demonstrates an A2 level of proficiency. In terms of fluency, the speaker can produce simple sentences and express basic opinions, though there is some repetition and contradiction in the message. Grammar accuracy is limited, with errors in sentence structure and word choice that affect 
+
+    o3               → A2 ✗
+    Reasoning: Fluency: The response is very brief and contains only two main sentences, but the speaker is able to keep talking without breaking into individual words. Simple connectors ('and', 'but', 'because') are used, indicating an ability to maintain a short stretch of speech typical of an A2 level.  Grammar
+
+    o3_mini          → B1 ✓
+    Reasoning: The speaker attempts to express opinions and reasons about smoking, indicating a basic ability to convey ideas on a familiar topic. Fluency is evident as the speaker delivers several related statements, though the overall flow is affected by contradictions and unclear phrasing (e.g., 'smoking in Bet
+
+  [ ROUND 2 — After seeing other models ]
+    gpt4o            → A2 ✗  (unchanged)
+    Reasoning: After reviewing the other examiners' arguments, I maintain the A2 label. The speaker demonstrates limited fluency with simple sentence structures and basic vocabulary, consistent with A2. While o3_mini suggests a B1 level, the contradictions and limited vocabulary range indicate a lower proficiency.
+
+    o3               → A2 ✗  (unchanged)
+    Reasoning: The transcript contains only two short, contradictory sentences with limited connectors and a very restricted, repetitive vocabulary. Errors such as 'selfish to action' obscure meaning, and the overall idea is only partially intelligible. This aligns with A2 descriptors (simple opinions on familiar 
+
+    o3_mini          → A2 ✗  (changed from B1)
+    Reasoning: After considering the detailed evidence from the other examiners, the speaker's use of repetitive and basic vocabulary, simple sentence structures, and clear contradictions indicates an elementary level of communication better aligned with A2 rather than B1.
+
+  [ VOTE ]  {'A2': 3}  →  majority = A2 ✗
+
+  [ ERROR TRACE ]
+    R1: Mixed — correct: {'o3_mini': 'B1'}  wrong: {'gpt4o': 'A2', 'o3': 'A2'}
+    R2: o3_mini changed B1→A2 (worsened ✗)
+    R2: All models still wrong ✗  — labels: {'gpt4o': 'A2', 'o3': 'A2', 'o3_mini': 'A2'}
+    VOTE: distribution={'A2': 3}  majority=A2
+    VOTE: Majority wrong ✗  (truth=B1)
+────────────────────────────────────────────────────────────

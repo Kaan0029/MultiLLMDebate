@@ -1,0 +1,24 @@
+{
+  "pipeline": "gpt_referee",
+  "split": "val_only",
+  "n_samples": 217,
+  "skipped": 0,
+  "metrics_final": {
+    "ACC": 23.04,
+    "ACC_ADJ": 63.13,
+    "ACC_MC": 28.47,
+    "ACC_MC_ADJ": 58.74,
+    "RMSE": 1.5012,
+    "RMSE_MC": 1.3817,
+    "PCC": 0.5679
+  },
+  "metrics_majority": {
+    "ACC": 25.35,
+    "ACC_ADJ": 65.9,
+    "ACC_MC": 28.91,
+    "ACC_MC_ADJ": 61.2,
+    "RMSE": 1.4496,
+    "RMSE_MC": 1.352,
+    "PCC": 0.5481
+  }
+}

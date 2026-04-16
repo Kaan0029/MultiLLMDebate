@@ -2,14 +2,17 @@
 """
 GPT + Referee Multi-LLM Debate Pipeline.
 Models: o3 + o3-mini + GPT-4o (text) for debate; GPT-4o as referee.
+Uses ThreadPoolExecutor to call all 3 debate models in parallel within each round.
+Referee call is sequential (depends on R2 results).
 Referee decision is clamped to ±1 CEFR level from the majority vote.
 Supports 3 data splits: val_only | train_only | train_val
 Outputs all 7 evaluation metrics + full error analysis.
 """
-import os, json, argparse
+import os, json, argparse, time
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from model_clients import (
     call_gpt,
@@ -46,6 +49,8 @@ GPT_MODELS = [
     ("o3_mini",    call_o3_mini),
     ("gpt4o_text", call_gpt),
 ]
+
+MODEL_ORDER = [name for name, _ in GPT_MODELS]
 
 DATA_SPLITS = {
     "val_only":   [
@@ -87,13 +92,15 @@ def clamp_cefr(ref_label, baseline_label):
 
 # ─────────────────────────────────────────────────────────
 # Debate engine (Round 1 + Round 2 + majority + referee)
-# with inline step-by-step logging
+# R1 and R2 model calls are parallelised.
+# Referee call is sequential (depends on R2 outputs).
 # ─────────────────────────────────────────────────────────
 
 def multi_gpt_referee_debate(transcript, sample_index):
     """
     Runs a two-round debate among GPT_MODELS, then passes the result
     to a referee model for a final constrained decision.
+    Within each round, all 3 models are called in parallel.
 
     Returns
     -------
@@ -105,36 +112,45 @@ def multi_gpt_referee_debate(transcript, sample_index):
     log_data = {"round1": [], "round2": []}
     print(f"\n  ── Sample {sample_index} ──────────────────────────────")
 
-    # ── Round 1: Independent judgments ────────────────────────────────────
-    r1_outputs = []
-    for name, fn in GPT_MODELS:
+    # ── Round 1: All 3 models called IN PARALLEL ──────────────────────────
+    def call_r1(name, fn):
         prompt = build_round1_prompt(transcript)
         raw    = fn(prompt)
         parsed = safe_parse_json(raw)
         label  = extract_label(parsed)
-
         if label not in VALID_CEFR:
             print(f"    [R1] ⚠ {name} returned invalid/unparseable label: '{label}' — "
                   f"raw snippet: {raw[:80]!r}")
-
-        r1_outputs.append({
+        return {
             "model":  name,
             "raw":    raw,
             "parsed": parsed,
             "label":  label,
-        })
+        }
 
+    r1_outputs = []
+    with ThreadPoolExecutor(max_workers=len(GPT_MODELS)) as executor:
+        futures = {
+            executor.submit(call_r1, name, fn): name
+            for name, fn in GPT_MODELS
+        }
+        for future in as_completed(futures):
+            r1_outputs.append(future.result())
+
+    r1_outputs.sort(key=lambda x: MODEL_ORDER.index(x["model"]))
     log_data["round1"] = r1_outputs
 
     # Step-by-step R1 analysis
     r1_summary = analyse_round1(r1_outputs)
 
-    # ── Round 2: Debate + reconsideration ─────────────────────────────────
-    r2_outputs = []
-    for name, fn in GPT_MODELS:
+    time.sleep(2)
+
+    # ── Round 2: All 3 models called IN PARALLEL ──────────────────────────
+    # Each model sees all R1 outputs (including others') before responding.
+    # All 3 R2 calls are independent of each other so can be parallelised.
+    def call_r2(name, fn):
         self_entry = next(o for o in r1_outputs if o["model"] == name)
         others     = [o for o in r1_outputs if o["model"] != name]
-
         prompt = build_round2_prompt(
             transcript,
             self_entry["label"],
@@ -148,22 +164,29 @@ def multi_gpt_referee_debate(transcript, sample_index):
                 for o in others
             ],
         )
-
-        raw    = fn(prompt)
-        parsed = safe_parse_json(raw)
+        raw           = fn(prompt)
+        parsed        = safe_parse_json(raw)
         updated_label = extract_label(parsed)
-
         if updated_label not in VALID_CEFR:
             print(f"    [R2] ⚠ {name} returned invalid/unparseable label: '{updated_label}' — "
                   f"raw snippet: {raw[:80]!r}")
-
-        r2_outputs.append({
+        return {
             "model":         name,
             "raw":           raw,
             "parsed":        parsed,
             "updated_label": updated_label,
-        })
+        }
 
+    r2_outputs = []
+    with ThreadPoolExecutor(max_workers=len(GPT_MODELS)) as executor:
+        futures = {
+            executor.submit(call_r2, name, fn): name
+            for name, fn in GPT_MODELS
+        }
+        for future in as_completed(futures):
+            r2_outputs.append(future.result())
+
+    r2_outputs.sort(key=lambda x: MODEL_ORDER.index(x["model"]))
     log_data["round2"] = r2_outputs
 
     # Step-by-step R2 analysis
@@ -182,7 +205,9 @@ def multi_gpt_referee_debate(transcript, sample_index):
     # Step-by-step vote analysis
     analyse_vote(votes, majority_label)
 
-    # ── Referee: final constrained decision ───────────────────────────────
+    time.sleep(2)
+
+    # ── Referee: final constrained decision (sequential — depends on R2) ──
     ref_prompt = build_referee_prompt(
         transcript=transcript,
         round2_outputs=r2_outputs,
@@ -200,9 +225,9 @@ def multi_gpt_referee_debate(transcript, sample_index):
     final_label = clamp_cefr(ref_label, majority_label)
 
     log_data["referee"] = {
-        "raw":               ref_raw,
-        "parsed":            ref_parsed,
-        "raw_label":         ref_label,
+        "raw":                 ref_raw,
+        "parsed":              ref_parsed,
+        "raw_label":           ref_label,
         "clamped_final_label": final_label,
     }
     log_data["final_label"] = final_label
@@ -260,11 +285,11 @@ def run_split(split_name, csv_paths):
 
     # Track metrics for both the final (referee) and majority-only predictions
     # for ablation comparison (did the referee actually help?)
-    y_true_all           = []
-    y_pred_final_all     = []   # referee-adjusted final predictions
-    y_pred_majority_all  = []   # raw majority vote predictions (pre-referee)
-    sample_details       = []
-    skipped              = 0
+    y_true_all          = []
+    y_pred_final_all    = []   # referee-adjusted final predictions
+    y_pred_majority_all = []   # raw majority vote predictions (pre-referee)
+    sample_details      = []
+    skipped             = 0
 
     with open(log_file, "w", encoding="utf-8") as f:
 
@@ -284,23 +309,23 @@ def run_split(split_name, csv_paths):
                 skipped += 1
                 continue
 
-            # ── Run debate + referee ───────────────────────────────────────
+            # ── Run debate + referee ──────────────────────────────────────
             pred, majority_pred, log_data, step_summary = \
                 multi_gpt_referee_debate(transcript, idx)
 
-            # ── Per-sample result print ────────────────────────────────────
+            # ── Per-sample result print ───────────────────────────────────
             match_final    = "✓" if pred          == truth else "✗"
             match_majority = "✓" if majority_pred == truth else "✗"
             print(f"  [{match_final}] Truth={truth}  "
                   f"Majority={majority_pred}[{match_majority}]  "
                   f"Final(referee)={pred}[{match_final}]")
 
-            # ── Structured log write ───────────────────────────────────────
+            # ── Structured log write ──────────────────────────────────────
             log_data["sample_index"] = idx
             log_data["ground_truth"] = truth
             f.write(json.dumps(log_data, ensure_ascii=False, indent=2) + "\n\n")
 
-            # ── Metrics accumulation ───────────────────────────────────────
+            # ── Metrics accumulation ──────────────────────────────────────
             if pred in CEFR_TO_NUM and majority_pred in CEFR_TO_NUM:
                 y_true_all.append(CEFR_TO_NUM[truth])
                 y_pred_final_all.append(CEFR_TO_NUM[pred])
@@ -309,7 +334,7 @@ def run_split(split_name, csv_paths):
                 print(f"  [WARN] Index {idx}: pred='{pred}' or majority='{majority_pred}' "
                       f"not in CEFR_TO_NUM — excluded from metric computation.")
 
-            # ── Sample details for post-hoc analysis ──────────────────────
+            # ── Sample details for post-hoc analysis ─────────────────────
             sample_details.append({
                 "index":              idx,
                 "truth":              truth,
@@ -349,12 +374,12 @@ def run_split(split_name, csv_paths):
 
     # ── Save results ───────────────────────────────────────────────────────
     result = {
-        "pipeline":          "gpt_referee",
-        "split":             split_name,
-        "n_samples":         len(y_true_all),
-        "skipped":           skipped,
-        "metrics_final":     metrics_final,
-        "metrics_majority":  metrics_majority,
+        "pipeline":         "gpt_referee",
+        "split":            split_name,
+        "n_samples":        len(y_true_all),
+        "skipped":          skipped,
+        "metrics_final":    metrics_final,
+        "metrics_majority": metrics_majority,
     }
     with open(result_file, "w") as rf:
         json.dump(result, rf, indent=2)

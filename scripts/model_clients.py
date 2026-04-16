@@ -28,7 +28,13 @@ from faster_whisper import WhisperModel
 
 # load whisper once
 #asr = WhisperModel("medium.en")
-asr = WhisperModel("small.en")
+asr = None
+
+def get_asr():
+    global asr
+    if asr is None:
+        asr = WhisperModel("small.en")
+    return asr
 
 
 # def transcribe_audio(audio_path: str) -> str:
@@ -38,7 +44,7 @@ asr = WhisperModel("small.en")
 
 def transcribe_audio(audio_path: str) -> str:
     try:
-        segments, _ = asr.transcribe(audio_path)
+        segments, _ = get_asr().transcribe(audio_path)
         text = " ".join(seg.text for seg in segments)
         torch.cuda.empty_cache()
         return text

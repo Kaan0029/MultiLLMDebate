@@ -1,13 +1,16 @@
 # scripts/debate_pipeline_gpt_only.py
 """
 GPT-only Multi-LLM Debate Pipeline (GPT-4o + o3 + o3-mini, majority vote).
+Uses ThreadPoolExecutor to call all 3 models in parallel within each round.
 Supports 3 data splits: val_only | train_only | train_val
 Outputs all 7 evaluation metrics + full error analysis.
 """
 import os, json, argparse
+import time
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from model_clients import (
     call_gpt,
@@ -41,6 +44,9 @@ GPT_MODELS = [
     ("o3_mini", call_o3_mini),
 ]
 
+# Model name list in fixed order for consistent sorting
+MODEL_ORDER = [name for name, _ in GPT_MODELS]
+
 # Each split maps to a list of CSV paths that are loaded and concatenated.
 # Since this is a zero-shot LLM pipeline (no training), evaluating on
 # any of these splits is valid — there is no overfitting risk.
@@ -60,12 +66,13 @@ DATA_SPLITS = {
 
 # ─────────────────────────────────────────────────────────
 # Debate engine (Round 1 + Round 2 + majority vote)
-# with inline step-by-step logging
+# All 3 models called in parallel within each round.
 # ─────────────────────────────────────────────────────────
 
 def multi_gpt_debate(transcript, sample_index):
     """
     Runs a two-round debate among GPT_MODELS on a single transcript.
+    Within each round, all 3 models are called in parallel via ThreadPoolExecutor.
     Prints step-by-step analysis inline for debugging.
 
     Returns
@@ -77,37 +84,47 @@ def multi_gpt_debate(transcript, sample_index):
     log_data = {"round1": [], "round2": []}
     print(f"\n  ── Sample {sample_index} ──────────────────────────────")
 
-    # ── Round 1: Independent judgments ────────────────────────────────────
-    r1_outputs = []
-    for name, fn in GPT_MODELS:
+    # ── Round 1: All 3 models called IN PARALLEL ──────────────────────────
+    def call_r1(name, fn):
         prompt = build_round1_prompt(transcript)
         raw    = fn(prompt)
         parsed = safe_parse_json(raw)
         label  = extract_label(parsed)
-
-        # Warn if label came back invalid
         if label not in VALID_CEFR:
             print(f"    [R1] ⚠ {name} returned invalid/unparseable label: '{label}' — "
                   f"raw output snippet: {raw[:80]!r}")
-
-        r1_outputs.append({
+        return {
             "model":  name,
             "raw":    raw,
             "parsed": parsed,
             "label":  label,
-        })
+        }
 
+    r1_outputs = []
+    with ThreadPoolExecutor(max_workers=len(GPT_MODELS)) as executor:
+        futures = {
+            executor.submit(call_r1, name, fn): name
+            for name, fn in GPT_MODELS
+        }
+        for future in as_completed(futures):
+            r1_outputs.append(future.result())
+
+    # Sort to consistent order so downstream logic is deterministic
+    r1_outputs.sort(key=lambda x: MODEL_ORDER.index(x["model"]))
     log_data["round1"] = r1_outputs
 
     # Step-by-step R1 analysis
     r1_summary = analyse_round1(r1_outputs)
 
-    # ── Round 2: Debate + reconsideration ─────────────────────────────────
-    r2_outputs = []
-    for name, fn in GPT_MODELS:
+    time.sleep(2)
+
+    # ── Round 2: All 3 models called IN PARALLEL ──────────────────────────
+    # Note: Round 2 depends on Round 1 results (each model sees others' R1
+    # outputs), but all 3 Round 2 calls are independent of each other,
+    # so they can still be parallelised.
+    def call_r2(name, fn):
         self_entry = next(o for o in r1_outputs if o["model"] == name)
         others     = [o for o in r1_outputs if o["model"] != name]
-
         prompt = build_round2_prompt(
             transcript,
             self_entry["label"],
@@ -121,23 +138,29 @@ def multi_gpt_debate(transcript, sample_index):
                 for o in others
             ],
         )
-
-        raw    = fn(prompt)
-        parsed = safe_parse_json(raw)
+        raw           = fn(prompt)
+        parsed        = safe_parse_json(raw)
         updated_label = extract_label(parsed)
-
-        # Warn if label came back invalid after R2
         if updated_label not in VALID_CEFR:
             print(f"    [R2] ⚠ {name} returned invalid/unparseable label: '{updated_label}' — "
                   f"raw output snippet: {raw[:80]!r}")
-
-        r2_outputs.append({
+        return {
             "model":         name,
             "raw":           raw,
             "parsed":        parsed,
             "updated_label": updated_label,
-        })
+        }
 
+    r2_outputs = []
+    with ThreadPoolExecutor(max_workers=len(GPT_MODELS)) as executor:
+        futures = {
+            executor.submit(call_r2, name, fn): name
+            for name, fn in GPT_MODELS
+        }
+        for future in as_completed(futures):
+            r2_outputs.append(future.result())
+
+    r2_outputs.sort(key=lambda x: MODEL_ORDER.index(x["model"]))
     log_data["round2"] = r2_outputs
 
     # Step-by-step R2 analysis
@@ -159,11 +182,11 @@ def multi_gpt_debate(transcript, sample_index):
 
     # ── Build step summary for post-hoc error analysis ────────────────────
     step_summary = {
-        "round1_labels":    r1_summary["labels"],
-        "round2_labels":    r2_summary["r2_labels"],
+        "round1_labels":     r1_summary["labels"],
+        "round2_labels":     r2_summary["r2_labels"],
         "vote_distribution": votes,
-        "r1_unique_count":  r1_summary["unique_count"],
-        "r2_changes":       r2_summary["changes"],
+        "r1_unique_count":   r1_summary["unique_count"],
+        "r2_changes":        r2_summary["changes"],
     }
 
     return final_label, log_data, step_summary

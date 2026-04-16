@@ -8,3 +8,5 @@ __pycache__/
 venv/
 .env
 logs/*.jsonl
+logs/*.jsonl
+logs/*_output.txt
