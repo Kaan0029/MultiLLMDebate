@@ -1,0 +1,116 @@
+FULL DEBATE PIPELINE ANALYSIS REPORT
+Log: ../logs/gpt_referee_val_only_logs.jsonl
+Samples: 217
+
+============================================================
+  1. OVERALL SUMMARY
+────────────────────────────────────────────────────────────
+  Total samples    : 217
+  Correct          : 50  (23.0%)
+  Errors           : 167   (77.0%)
+
+============================================================
+  2. PER-CLASS ACCURACY
+────────────────────────────────────────────────────────────
+  Level      Total   Correct      ACC    ADJ±1
+  ─────────────────────────────────────────────
+  A2            16        13    81.2%   100.0%
+  B1            44        18    40.9%   100.0%
+  B2            94        19    20.2%    75.5%
+  C1            33         0     0.0%    18.2%
+  C2            30         0     0.0%     0.0%
+
+============================================================
+  3. CONFUSION PAIRS (truth → prediction)
+────────────────────────────────────────────────────────────
+  Truth→Pred         Count Bar
+  ─────────────────────────────────────────────
+  B2→B1                52  ████████████████████████████████████████████████████
+  B1→A2                26  ██████████████████████████
+  C2→B2                24  ████████████████████████
+  B2→A2                22  ██████████████████████
+  C1→B1                19  ███████████████████
+  C1→A2                 8  ████████
+  C1→B2                 6  ██████
+  C2→B1                 5  █████
+  A2→B1                 2  ██
+  B2→A1                 1  █
+  A2→A1                 1  █
+  C2→A2                 1  █
+
+============================================================
+  4. ERROR DIRECTION
+────────────────────────────────────────────────────────────
+  Over-rated  (pred > truth) : 2   (1.2%  of errors)
+  Under-rated (pred < truth) : 165  (98.8% of errors)
+
+============================================================
+  5. ERROR ORIGIN: WHERE DID IT GO WRONG?
+────────────────────────────────────────────────────────────
+  Error already in R1, persisted to final : 152  (91.0% of errors)
+  R1 was correct but R2 introduced error  : 15  (9.0% of errors)
+  R1 was wrong but R2 recovered correctly : 4
+
+  → If R1-caused errors dominate: improve Round 1 prompt or examples.
+  → If R2-caused errors dominate: debate is hurting — make R2 more conservative.
+
+============================================================
+  6. PER-MODEL ACCURACY IN ROUND 1
+────────────────────────────────────────────────────────────
+  Model              Correct   Total      ACC
+  ─────────────────────────────────────────────
+  gpt4o_text              76     217    35.0%
+  o3                      53     217    24.4%
+  o3_mini                 56     217    25.8%
+
+============================================================
+  7. PER-MODEL ACCURACY IN ROUND 2
+────────────────────────────────────────────────────────────
+  Model              Correct   Total      ACC
+  ─────────────────────────────────────────────
+  gpt4o_text              53     217    24.4%
+  o3                      55     217    25.3%
+  o3_mini                 60     217    27.6%
+
+============================================================
+  8. LABEL SHIFTS R1→R2 PER MODEL (helped=R1 wrong→R2 correct, hurt=R1 correct→R2 wrong)
+────────────────────────────────────────────────────────────
+  Model              Shifts   Total   Shift%   Helped   Hurt
+  ────────────────────────────────────────────────────────────
+  gpt4o_text             63     217    29.0%       11     34
+  o3                      5     217     2.3%        2      0
+  o3_mini                42     217    19.4%       14     10
+
+============================================================
+  9. INTER-MODEL AGREEMENT IN ROUND 1
+────────────────────────────────────────────────────────────
+  Full agreement    : 108   (49.8%)
+  Partial agreement : 106  (48.8%)
+  Full disagreement : 3   (1.4%)
+
+  When R1 fully agreed, how often was it correct: 27/108 = 25.0%
+
+  → High full-agreement + wrong = models share a systematic bias.
+  → High disagreement = task is genuinely ambiguous at this level.
+
+============================================================
+  10. REFEREE ANALYSIS
+────────────────────────────────────────────────────────────
+  Samples with referee       : 217
+  Referee agreed with majority : 200  (92.2%)
+  Referee changed decision   : 17  (7.8%)
+  Clamp triggered            : 0  (0.0%)
+  Of changes: helped=2  hurt=15
+
+  → If hurt > helped: referee is net negative, consider removing.
+  → If clamp fires often: referee is too aggressive, tighten prompt.
+
+============================================================
+  11. UNK / PARSE FAILURE ANALYSIS
+────────────────────────────────────────────────────────────
+  UNK in R1 outputs  : 1
+  UNK in R2 outputs  : 0
+  UNK as final label : 0
+
+  → High UNK count = models not following JSON output format.
+  → Fix: strengthen format instructions in prompts.py.

@@ -1,0 +1,95 @@
+FULL DEBATE PIPELINE ANALYSIS REPORT
+Log: ../logs/gpt_only_train_only_logs.jsonl
+Samples: 794
+
+============================================================
+  1. OVERALL SUMMARY
+────────────────────────────────────────────────────────────
+  Total samples    : 794
+  Correct          : 263  (33.1%)
+  Errors           : 531   (66.9%)
+
+============================================================
+  2. PER-CLASS ACCURACY
+────────────────────────────────────────────────────────────
+  Level      Total   Correct      ACC    ADJ±1
+  ─────────────────────────────────────────────
+  B1           392       199    50.8%    95.9%
+  B2           402        64    15.9%    77.1%
+
+============================================================
+  3. CONFUSION PAIRS (truth → prediction)
+────────────────────────────────────────────────────────────
+  Truth→Pred         Count Bar
+  ─────────────────────────────────────────────
+  B2→B1               246  ██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+  B1→A2               160  ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
+  B2→A2                87  ███████████████████████████████████████████████████████████████████████████████████████
+  B1→B2                17  █████████████████
+  B1→A1                16  ████████████████
+  B2→A1                 5  █████
+
+============================================================
+  4. ERROR DIRECTION
+────────────────────────────────────────────────────────────
+  Over-rated  (pred > truth) : 17   (3.2%  of errors)
+  Under-rated (pred < truth) : 514  (96.8% of errors)
+
+============================================================
+  5. ERROR ORIGIN: WHERE DID IT GO WRONG?
+────────────────────────────────────────────────────────────
+  Error already in R1, persisted to final : 484  (91.1% of errors)
+  R1 was correct but R2 introduced error  : 47  (8.9% of errors)
+  R1 was wrong but R2 recovered correctly : 2
+
+  → If R1-caused errors dominate: improve Round 1 prompt or examples.
+  → If R2-caused errors dominate: debate is hurting — make R2 more conservative.
+
+============================================================
+  6. PER-MODEL ACCURACY IN ROUND 1
+────────────────────────────────────────────────────────────
+  Model              Correct   Total      ACC
+  ─────────────────────────────────────────────
+  gpt4o                  341     794    42.9%
+  o3                     241     794    30.4%
+  o3_mini                382     794    48.1%
+
+============================================================
+  7. PER-MODEL ACCURACY IN ROUND 2
+────────────────────────────────────────────────────────────
+  Model              Correct   Total      ACC
+  ─────────────────────────────────────────────
+  gpt4o                  253     794    31.9%
+  o3                     250     794    31.5%
+  o3_mini                307     794    38.7%
+
+============================================================
+  8. LABEL SHIFTS R1→R2 PER MODEL (helped=R1 wrong→R2 correct, hurt=R1 correct→R2 wrong)
+────────────────────────────────────────────────────────────
+  Model              Shifts   Total   Shift%   Helped   Hurt
+  ────────────────────────────────────────────────────────────
+  gpt4o                 267     794    33.6%       66    154
+  o3                     24     794     3.0%       11      2
+  o3_mini               150     794    18.9%       11     86
+
+============================================================
+  9. INTER-MODEL AGREEMENT IN ROUND 1
+────────────────────────────────────────────────────────────
+  Full agreement    : 364   (45.8%)
+  Partial agreement : 423  (53.3%)
+  Full disagreement : 7   (0.9%)
+
+  When R1 fully agreed, how often was it correct: 161/364 = 44.2%
+
+  → High full-agreement + wrong = models share a systematic bias.
+  → High disagreement = task is genuinely ambiguous at this level.
+
+============================================================
+  11. UNK / PARSE FAILURE ANALYSIS
+────────────────────────────────────────────────────────────
+  UNK in R1 outputs  : 6
+  UNK in R2 outputs  : 0
+  UNK as final label : 0
+
+  → High UNK count = models not following JSON output format.
+  → Fix: strengthen format instructions in prompts.py.

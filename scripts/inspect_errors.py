@@ -177,6 +177,8 @@ def main():
                         help="Number of error cases to inspect")
     parser.add_argument("--out", default=None,
                         help="Optional output .txt file path")
+    parser.add_argument("--stratified", action="store_true",
+                        help="Sample errors evenly across error types rather than taking first n")
     args = parser.parse_args()
 
     print(f"\nLoading logs from: {args.log}")
@@ -190,15 +192,39 @@ def main():
         and r["ground_truth"] != r["final_label"]
     ]
     print(f"Total errors found : {len(errors)}")
-    print(f"Inspecting first   : {min(args.n, len(errors))} error cases\n")
+
+    # ── Select which errors to inspect ────────────────────────────────────
+    if args.stratified:
+        # Group by (truth, pred) pair and sample evenly across all error types
+        # This ensures we see a representative spread rather than just the
+        # most common error type repeated 10 times
+        from collections import defaultdict
+        buckets = defaultdict(list)
+        for r in errors:
+            key = (r["ground_truth"], r["final_label"])
+            buckets[key].append(r)
+        sampled = []
+        bucket_lists = list(buckets.values())
+        i = 0
+        while len(sampled) < args.n and any(bucket_lists):
+            bucket = bucket_lists[i % len(bucket_lists)]
+            if bucket:
+                sampled.append(bucket.pop(0))
+            i += 1
+        errors_to_inspect = sampled
+        print(f"Stratified sample  : {len(errors_to_inspect)} errors across "
+              f"{len(set((r['ground_truth'], r['final_label']) for r in errors_to_inspect))} error types\n")
+    else:
+        errors_to_inspect = errors[:args.n]
+        print(f"Inspecting first   : {min(args.n, len(errors))} error cases\n")
 
     output_lines = []
     output_lines.append(f"ERROR INSPECTION REPORT")
     output_lines.append(f"Log file : {args.log}")
-    output_lines.append(f"Total errors : {len(errors)}  |  Showing : {min(args.n, len(errors))}")
+    output_lines.append(f"Total errors : {len(errors)}  |  Showing : {len(errors_to_inspect)}")
     output_lines.append("=" * 60)
 
-    for record in errors[:args.n]:
+    for record in errors_to_inspect:
         truth     = record["ground_truth"]
         formatted = format_reasoning(record, truth)
         output_lines.append(formatted)
@@ -206,7 +232,8 @@ def main():
 
     # Save to file
     log_path = Path(args.log)
-    out_path = args.out or str(log_path.parent / (log_path.stem + "_error_inspection.txt"))
+    suffix   = "_stratified_inspection.txt" if args.stratified else "_error_inspection.txt"
+    out_path = args.out or str(log_path.parent / (log_path.stem + suffix))
     Path(out_path).write_text("\n".join(output_lines), encoding="utf-8")
     print(f"\nFull report saved → {out_path}")
 
