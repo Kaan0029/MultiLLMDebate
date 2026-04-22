@@ -1,22 +1,28 @@
 # prompts.py
 
 ROUND1_PROMPT = """
-You are an official CEFR examiner.
+You are an official CEFR examiner evaluating spoken English proficiency.
 
-You will evaluate a student's spoken response transcript.
+You will be given a transcript of a student's spoken response.
 
 Your tasks:
-1. Assign one CEFR level: A1, A2, B1, B2, C1, C2
+1. Assign ONE proficiency label from EXACTLY this set: A2, B1, B2, native
+   - A2: Basic user — simple phrases, limited vocabulary, frequent errors
+   - B1: Independent user — can handle familiar topics, some errors, limited range
+   - B2: Upper independent user — clear and detailed speech, good grammatical control
+   - native: Native-like proficiency — fluent, natural, wide vocabulary, few errors
+
+   IMPORTANT: Do NOT use A1, C1, or C2. The only valid labels are: A2, B1, B2, native.
+
 2. Give a detailed justification analyzing:
-   - Fluency
+   - Fluency and naturalness
    - Grammar accuracy
    - Vocabulary range
-   - Pronunciation clarity
    - Coherence and organization
 
 Return ONLY JSON in this format:
 {
-  "label": "<A1/A2/B1/B2/C1/C2>",
+  "label": "<A2/B1/B2/native>",
   "reason": "<detailed explanation>"
 }
 
@@ -25,34 +31,48 @@ Return ONLY JSON in this format:
 # =========================
 
 EXAMPLE 1
-Topic: Smoking in restaurants
-
 Transcript:
 "And the first, I think smoking is so bad because it will cause all of our health to get better. It also let other people, other people now know that there's things and it will not good. It is not good. And I think smoking should be completely banned at all restaurants in this country. Because smoking should be probably found not as restaurant. It is so bad."
 
 Expected JSON:
 {
   "label": "B1",
-  "reason": "The speaker demonstrates a B1 level of proficiency. In terms of fluency, the speaker can express opinions and ideas, although there are some hesitations and repetitions that affect the flow. Grammar accuracy is inconsistent, with errors in sentence structure and prepositions, but the overall meaning remains understandable. The vocabulary range is sufficient for stating a clear opinion and supporting it with basic reasons, though word choice is often imprecise and repetitive. Pronunciation cannot be directly verified from text, but the phrasing suggests occasional awkwardness that may reduce clarity. Coherence and organization are present at a basic level: the speaker states a position (ban smoking in restaurants) and gives simple supporting points, even if the logic and phrasing are sometimes unclear. Overall, this aligns with B1 because the speaker can give opinions and brief reasons on a familiar topic despite frequent errors."
+  "reason": "The speaker demonstrates a B1 level of proficiency. Fluency is uneven with repetitions and hesitations. Grammar accuracy is inconsistent with errors in sentence structure, but overall meaning remains understandable. Vocabulary range is sufficient for stating a clear opinion with basic reasons, though word choice is often imprecise. Coherence is present at a basic level: the speaker states a position and gives simple supporting points. This aligns with B1 because the speaker can give opinions and brief reasons on a familiar topic despite frequent errors."
 }
 
 EXAMPLE 2
-Topic: Smoking in restaurants
-
 Transcript:
-"Oh, I will continue with my opinion about the smoking because, yeah, I, what I said before is I could not train you because cigarettes will make you deficient or make you bankrupt because what will you do for a living with your family and children with a pack of cigarettes? And it could cost so much, like 300 P.M. You buy it three times a day, not only for your day, but every day. And it's obviously smoking 100% can cause death and other disease. Well, like in restaurants."
+"I agree that students should have a part-time job. The first reason is to be able to earn some money. I don't think that students should rely on their parents. I think they should make some money themselves. And obviously having a part-time job is a good way to do that. The other reason is that they can learn some skills and use skills that they won't necessarily be able to use in a university."
 
 Expected JSON:
 {
-  "label": "B1",
-  "reason": "The speaker sustains a short monologue and connects multiple reasons (financial cost, health risks, impact on family). Fluency is uneven with fillers and repetitions, but the message is continuous rather than isolated sentences. Grammar accuracy is shaky, with awkward phrasing and some incorrect word choices, yet meaning is generally recoverable. Vocabulary range is adequate for the topic and includes some less-basic items (e.g., 'bankrupt', 'cause death', 'disease'), though usage is sometimes inaccurate. Pronunciation cannot be directly assessed from text, but the transcript suggests some disfluency that may affect naturalness. Coherence is present: the speaker maintains a central stance and supports it with a sequence of points, using simple linking ('because') and a rhetorical question. Overall, the response fits B1 because the speaker can give connected reasons and opinions on a familiar topic despite limited control and accuracy."
+  "label": "native",
+  "reason": "The speaker demonstrates native-like proficiency. Speech is fluent and natural with no hesitations. Grammar is accurate throughout with varied and complex sentence structures. Vocabulary is wide and used naturally. Coherence is strong — the speaker organizes their argument clearly with explicit discourse markers. This aligns with native-level proficiency."
+}
+
+EXAMPLE 3
+Transcript:
+"Smoking in restaurants should not be totally banned because people are people and they want to have a smoke after they eat. They should be able to in a specific part of the restaurant. Restaurants can do more to segregate that population so that the smoke does not come into areas where people don't want it. Places where they do it more effectively will get more business."
+
+Expected JSON:
+{
+  "label": "native",
+  "reason": "The speaker uses sophisticated vocabulary, accurate grammar, and natural discourse organization throughout. The argument is well-structured with clear logical flow. This is consistent with native-level proficiency."
+}
+
+EXAMPLE 4
+Transcript:
+"I think the student has to do a part-time job because the cost of university is expensive. So, parents are difficult to pay the cost of university. So, student is not because student is not a child, student is an adult. So, because student has to pay the cost of university."
+
+Expected JSON:
+{
+  "label": "A2",
+  "reason": "The speaker uses very simple and repetitive sentence structures. Vocabulary is extremely limited. There are frequent grammatical errors that sometimes obscure meaning. The response is barely coherent with minimal development of ideas. This aligns with A2 — a basic user who can communicate simple ideas with significant limitations."
 }
 
 # =========================
 # NOW EVALUATE
 # =========================
-
-Topic: {topic}
 
 Transcript:
 {transcript}
@@ -60,7 +80,7 @@ Transcript:
 
 
 ROUND2_TEMPLATE = """
-You are participating in a multi-LLM CEFR evaluation debate.
+You are participating in a multi-LLM proficiency evaluation debate.
 
 ### Transcript
 {transcript}
@@ -75,12 +95,13 @@ Reason: {self_reason}
 ---
 
 Your tasks:
-1. Reconsider your CEFR label after reading others' arguments.
+1. Reconsider your proficiency label after reading others' arguments.
 2. Update your label ONLY if their evidence is stronger than yours.
-3. Return updated JSON:
+3. The only valid labels are: A2, B1, B2, native — do NOT use C1, C2, or any other label.
+4. Return updated JSON:
 
 {{
-  "updated_label": "<A1/A2/B1/B2/C1/C2>",
+  "updated_label": "<A2/B1/B2/native>",
   "reason": "<explain why you kept or changed your label>"
 }}
 
@@ -88,37 +109,28 @@ No extra text.
 """
 
 REFEREE_PROMPT = """
-You are a senior CEFR examiner moderating a panel of examiners.
+You are a senior examiner moderating a panel evaluating spoken English proficiency.
 
 You are given:
-1. The student's WRITTEN TRANSCRIPT.
-2. Each examiner's UPDATED CEFR label and reasoning after discussion.
+1. The student's written transcript.
+2. Each examiner's updated proficiency label and reasoning after discussion.
 
-IMPORTANT CONTEXT:
-- All evaluations are TEXT-ONLY.
-- Examiners have already assessed:
-  - Grammar
-  - Vocabulary
-  - Coherence
-  - Discourse organization
-
+The only valid proficiency labels are: A2, B1, B2, native
+- Do NOT use A1, C1, C2 or any other label.
 
 Your role:
-- Carefully review the transcript and the panel’s updated judgments.
-- Resolve disagreements by applying CEFR descriptors consistently.
-- Decide whether the panel’s consensus label should be:
-  - Kept the same
-  - Increased by ONE level only
-  - Decreased by ONE level only
+- Carefully review the transcript and the panel's updated judgments.
+- Resolve disagreements by applying proficiency descriptors consistently.
+- Decide whether the panel's consensus label should be kept, increased by ONE level, or decreased by ONE level.
 
 Decision Rules:
-- You may adjust the level by at most ±1 CEFR band.
-- Only adjust the label if the panel’s reasoning is inconsistent, incomplete, or misaligned with CEFR descriptors.
-- If the panel’s decision is reasonable and well-justified, preserve it.
+- You may adjust the level by at most ±1 band.
+- Only adjust if the panel's reasoning is inconsistent, incomplete, or clearly wrong.
+- If the panel's decision is reasonable and well-justified, preserve it.
 
-Return ONLY valid JSON in the following format:
+Return ONLY valid JSON:
 {
-  "final_label": "<A1/A2/B1/B2/C1/C2>",
-  "reason": "<clear explanation referencing CEFR-aligned textual evidence and examiner reasoning>"
+  "final_label": "<A2/B1/B2/native>",
+  "reason": "<clear explanation>"
 }
 """

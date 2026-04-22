@@ -7,11 +7,11 @@ import numpy as np
 from scipy.stats import pearsonr
 from collections import defaultdict
 
-CEFR_LEVELS  = ["A1", "A2", "B1", "B2", "C1", "C2"]
-CEFR_ORDER = CEFR_LEVELS   # alias — used by referee clamp logic
-CEFR_TO_NUM  = {"A1": 1, "A2": 2, "B1": 3, "B2": 4, "C1": 5, "C2": 6}
-NUM_TO_CEFR  = {v: k for k, v in CEFR_TO_NUM.items()}
-VALID_CEFR   = set(CEFR_LEVELS)
+CEFR_LEVELS = ["A2", "B1", "B2", "native"]
+CEFR_TO_NUM = {"A2": 1, "B1": 2, "B2": 3, "native": 4}
+NUM_TO_CEFR = {v: k for k, v in CEFR_TO_NUM.items()}
+VALID_CEFR  = set(CEFR_LEVELS)
+CEFR_ORDER  = CEFR_LEVELS  # alias used by referee clamp logic
 
 
 # ─────────────────────────────────────────────

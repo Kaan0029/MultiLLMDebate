@@ -111,7 +111,7 @@ Examiners' updated judgments:
 
 
 def build_round1_prompt(transcript):
-    return ROUND1_PROMPT + f"\n\nTranscript:\n{transcript}\n"
+    return ROUND1_PROMPT.replace("{transcript}", transcript)
 
 def build_round2_prompt(transcript, self_label, self_reason, others):
     others_text = ""

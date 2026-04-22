@@ -196,7 +196,9 @@ def multi_gpt_debate(transcript, sample_index):
 # Run one data split end-to-end
 # ─────────────────────────────────────────────────────────
 
-def run_split(split_name, csv_paths):
+def run_split(split_name, csv_paths, log_dir="../logs"):
+    LOG_DIR = Path(log_dir)
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
     print(f"\n{'='*60}")
     print(f"  GPT-ONLY DEBATE PIPELINE")
     print(f"  Split : {split_name}")
@@ -236,7 +238,9 @@ def run_split(split_name, csv_paths):
         for idx, row in tqdm(df.iterrows(), total=len(df),
                              desc=f"gpt_only/{split_name}"):
 
-            truth      = str(row["cefr_label"]).strip().upper()
+            truth = str(row["cefr_label"]).strip().upper()
+            if truth in ("B1_1", "B1_2"):
+                truth = "B1"
             transcript = str(row.get("transcript", "")).strip()
 
             # ── Skip guard ────────────────────────────────────────────────
@@ -336,6 +340,8 @@ def main():
             "  all        — run all three splits sequentially"
         ),
     )
+    parser.add_argument("--logdir", default="../logs",
+                        help="Output directory for logs and results")
     args = parser.parse_args()
 
     splits_to_run = (
@@ -344,16 +350,14 @@ def main():
 
     all_results = {}
     for split_name in splits_to_run:
-        metrics = run_split(split_name, DATA_SPLITS[split_name])
+        metrics = run_split(split_name, DATA_SPLITS[split_name], args.logdir)
         all_results[split_name] = metrics
 
-    # ── Combined summary across splits ────────────────────────────────────
-    summary_file = LOG_DIR / "gpt_only_all_splits_summary.json"
+    summary_file = Path(args.logdir) / "gpt_only_all_splits_summary.json"
     with open(summary_file, "w") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nCombined summary saved → {summary_file}")
 
-    # Final comparison table if multiple splits ran
     if len(all_results) > 1:
         print(f"\n{'='*60}")
         print(f"  CROSS-SPLIT COMPARISON  —  GPT-only")

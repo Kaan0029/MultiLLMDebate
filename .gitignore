@@ -11,3 +11,5 @@ logs/*.jsonl
 logs/*.jsonl
 logs/*_output.txt
 logs/*.log
+logs/*.jsonl
+logs/*_running_metrics.json

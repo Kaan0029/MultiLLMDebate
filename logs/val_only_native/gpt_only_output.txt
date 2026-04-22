@@ -1,0 +1,2797 @@
+/home/ke2461/venv/lib/python3.10/site-packages/google/api_core/_python_version_support.py:263: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/home/ke2461/MultiLLMDebate/scripts/model_clients.py:7: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+
+============================================================
+  GPT-ONLY DEBATE PIPELINE
+  Split : val_only
+  CSVs  : ['../BaselineDatasets/dev_with_transcripts.csv']
+============================================================
+  Total samples loaded: 217
+gpt_only/val_only:   0%|          | 0/217 [00:00<?, ?it/s]gpt_only/val_only:   0%|          | 1/217 [00:23<1:23:23, 23.16s/it]gpt_only/val_only:   1%|          | 2/217 [02:50<5:45:05, 96.30s/it]gpt_only/val_only:   1%|▏         | 3/217 [03:20<3:55:12, 65.94s/it]gpt_only/val_only:   2%|▏         | 4/217 [03:41<2:51:45, 48.38s/it]gpt_only/val_only:   2%|▏         | 5/217 [03:58<2:09:47, 36.73s/it]gpt_only/val_only:   3%|▎         | 6/217 [04:16<1:47:32, 30.58s/it]gpt_only/val_only:   4%|▎         | 8/217 [04:39<1:13:22, 21.06s/it]gpt_only/val_only:   4%|▍         | 9/217 [04:58<1:11:00, 20.49s/it]gpt_only/val_only:   5%|▍         | 10/217 [05:16<1:08:49, 19.95s/it]gpt_only/val_only:   5%|▌         | 11/217 [05:34<1:06:53, 19.48s/it]gpt_only/val_only:   6%|▌         | 12/217 [06:01<1:13:22, 21.47s/it]gpt_only/val_only:   6%|▌         | 13/217 [06:29<1:19:39, 23.43s/it]gpt_only/val_only:   6%|▋         | 14/217 [06:45<1:12:12, 21.34s/it]
+  ── Sample 0 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 1 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (A2 → B1)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 2 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 3 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 4 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 5 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+  [SKIP] Index 6: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 7 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B2
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (B1 → B2)  ↑ RAISED
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B1→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 8 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 9 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 10 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✓] Truth=A2  Pred=A2
+
+  ── Sample 11 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 12 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (B1 → B2)  ↑ RAISED
+         o3               → B1  (B2 → B1)  ↓ LOWERED
+         o3_mini          → B1  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o', 'B1→B2'), ('o3', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 13 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 14 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+gpt_only/val_only:   7%|▋         | 15/217 [07:11<1:15:56, 22.56s/it]gpt_only/val_only:   7%|▋         | 16/217 [07:24<1:06:45, 19.93s/it]gpt_only/val_only:   8%|▊         | 17/217 [09:33<2:54:27, 52.34s/it]gpt_only/val_only:   8%|▊         | 18/217 [09:50<2:18:07, 41.65s/it]gpt_only/val_only:   9%|▉         | 19/217 [10:18<2:04:23, 37.69s/it]gpt_only/val_only:   9%|▉         | 20/217 [10:41<1:49:29, 33.35s/it]gpt_only/val_only:  10%|▉         | 21/217 [12:00<2:33:10, 46.89s/it]gpt_only/val_only:  10%|█         | 22/217 [12:37<2:22:28, 43.84s/it]gpt_only/val_only:  11%|█         | 23/217 [13:19<2:20:16, 43.38s/it]gpt_only/val_only:  11%|█         | 24/217 [13:34<1:52:22, 34.94s/it]gpt_only/val_only:  12%|█▏        | 25/217 [13:58<1:40:52, 31.52s/it]gpt_only/val_only:  12%|█▏        | 27/217 [14:15<1:06:19, 20.95s/it]gpt_only/val_only:  13%|█▎        | 28/217 [14:32<1:03:04, 20.02s/it]    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 15 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 16 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 17 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 18 ──────────────────────────────
+    [R1] ⚠ o3_mini returned invalid/unparseable label: 'UNK' — raw output snippet: '{\n  "label": "A2",\n  "reason": "The speaker’s response demonstrates characterist'
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → UNK  ⚠ INVALID LABEL
+    [R1] ✗ Total disagreement — all 3 models differ: {'gpt4o': 'A2', 'o3': 'B1', 'o3_mini': 'UNK'}
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (UNK → B1)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o', 'A2→B1'), ('o3_mini', 'UNK→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 19 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 20 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → A2  (B1 → A2)  ↓ LOWERED
+         o3_mini          → B1  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o', 'A2→B1'), ('o3', 'B1→A2')]
+    [VOTE] Distribution: {'B1': 2, 'A2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 21 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 22 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 23 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 24 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+  [SKIP] Index 25: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 26 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 25 samples.
+
+  ── Sample 27 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 28 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+gpt_only/val_only:  13%|█▎        | 29/217 [17:23<3:06:04, 59.38s/it]gpt_only/val_only:  14%|█▍        | 30/217 [17:41<2:30:34, 48.31s/it]gpt_only/val_only:  14%|█▍        | 31/217 [18:01<2:04:32, 40.18s/it]gpt_only/val_only:  15%|█▍        | 32/217 [18:26<1:50:38, 35.88s/it]gpt_only/val_only:  15%|█▌        | 33/217 [18:44<1:34:33, 30.83s/it]gpt_only/val_only:  16%|█▌        | 34/217 [19:04<1:24:20, 27.65s/it]gpt_only/val_only:  16%|█▌        | 35/217 [19:33<1:24:36, 27.89s/it]gpt_only/val_only:  17%|█▋        | 36/217 [19:59<1:22:41, 27.41s/it]gpt_only/val_only:  17%|█▋        | 37/217 [20:49<1:42:30, 34.17s/it]gpt_only/val_only:  18%|█▊        | 38/217 [21:15<1:34:20, 31.62s/it]gpt_only/val_only:  18%|█▊        | 39/217 [22:36<2:18:05, 46.55s/it]gpt_only/val_only:  18%|█▊        | 40/217 [22:58<1:55:13, 39.06s/it]gpt_only/val_only:  19%|█▉        | 41/217 [23:15<1:35:04, 32.41s/it]gpt_only/val_only:  19%|█▉        | 42/217 [23:47<1:34:34, 32.42s/it]    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 29 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 30 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 31 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 32 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 33 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 34 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 35 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 36 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B1  (B2 → B1)  ↓ LOWERED
+         o3_mini          → B2  (B1 → B2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('o3', 'B2→B1'), ('o3_mini', 'B1→B2')]
+    [VOTE] Distribution: {'B2': 2, 'B1': 1}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 37 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (A2 → B1)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o', 'A2→B1'), ('o3_mini', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 38 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B2  Pred=A2
+
+  ── Sample 39 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 40 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 41 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 42 ──────────────────────────────
+    [R1] Individual predictions:
+gpt_only/val_only:  20%|█▉        | 43/217 [24:08<1:24:14, 29.05s/it]gpt_only/val_only:  20%|██        | 44/217 [24:24<1:11:58, 24.96s/it]gpt_only/val_only:  21%|██        | 45/217 [24:43<1:06:29, 23.20s/it]gpt_only/val_only:  21%|██        | 46/217 [25:00<1:01:07, 21.45s/it]gpt_only/val_only:  22%|██▏       | 47/217 [25:15<54:49, 19.35s/it]  gpt_only/val_only:  22%|██▏       | 48/217 [25:37<57:21, 20.36s/it]gpt_only/val_only:  23%|██▎       | 49/217 [25:54<53:59, 19.29s/it]gpt_only/val_only:  23%|██▎       | 50/217 [26:13<53:14, 19.13s/it]gpt_only/val_only:  24%|██▍       | 52/217 [27:13<1:06:30, 24.18s/it]gpt_only/val_only:  24%|██▍       | 53/217 [27:29<1:00:41, 22.21s/it]gpt_only/val_only:  25%|██▌       | 55/217 [27:56<50:02, 18.54s/it]  gpt_only/val_only:  26%|██▌       | 56/217 [28:19<52:16, 19.48s/it]gpt_only/val_only:  26%|██▋       | 57/217 [29:19<1:18:32, 29.45s/it]gpt_only/val_only:  27%|██▋       | 58/217 [29:37<1:10:10, 26.48s/it]         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 43 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 44 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 45 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 46 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 47 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 48 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 49 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+  [SKIP] Index 50: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 51 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 52 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 50 samples.
+  [SKIP] Index 53: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 54 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 55 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 56 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 57 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+gpt_only/val_only:  27%|██▋       | 59/217 [29:53<1:02:10, 23.61s/it]gpt_only/val_only:  28%|██▊       | 60/217 [31:00<1:33:55, 35.89s/it]gpt_only/val_only:  28%|██▊       | 61/217 [34:27<3:39:48, 84.54s/it]gpt_only/val_only:  29%|██▊       | 62/217 [34:48<2:51:02, 66.21s/it]gpt_only/val_only:  29%|██▉       | 63/217 [35:03<2:11:14, 51.14s/it]gpt_only/val_only:  29%|██▉       | 64/217 [35:30<1:52:23, 44.08s/it]gpt_only/val_only:  30%|██▉       | 65/217 [35:58<1:40:00, 39.47s/it]gpt_only/val_only:  30%|███       | 66/217 [36:20<1:26:03, 34.20s/it]gpt_only/val_only:  31%|███       | 67/217 [36:41<1:15:32, 30.22s/it]gpt_only/val_only:  31%|███▏      | 68/217 [38:29<2:12:55, 53.53s/it]gpt_only/val_only:  32%|███▏      | 69/217 [38:52<1:49:09, 44.25s/it]gpt_only/val_only:  32%|███▏      | 70/217 [39:13<1:31:43, 37.44s/it]gpt_only/val_only:  33%|███▎      | 71/217 [39:27<1:13:41, 30.28s/it]gpt_only/val_only:  33%|███▎      | 72/217 [40:04<1:18:33, 32.51s/it]
+  ── Sample 58 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 59 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 60 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 61 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 62 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 63 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 64 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 2, 'B1': 1}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 65 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 66 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 67 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (B2 → B1)  ↓ LOWERED
+         o3_mini          → B2  (B1 → B2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('o3', 'B2→B1'), ('o3_mini', 'B1→B2')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 68 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 69 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 70 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 71 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+gpt_only/val_only:  34%|███▍      | 74/217 [40:22<51:23, 21.56s/it]  gpt_only/val_only:  35%|███▍      | 75/217 [40:50<55:01, 23.25s/it]gpt_only/val_only:  35%|███▌      | 76/217 [41:13<54:20, 23.13s/it]gpt_only/val_only:  35%|███▌      | 77/217 [41:33<52:04, 22.32s/it]gpt_only/val_only:  36%|███▌      | 78/217 [42:00<54:47, 23.65s/it]gpt_only/val_only:  36%|███▋      | 79/217 [42:23<53:44, 23.36s/it]gpt_only/val_only:  37%|███▋      | 80/217 [42:41<49:32, 21.70s/it]gpt_only/val_only:  37%|███▋      | 81/217 [42:58<46:13, 20.39s/it]gpt_only/val_only:  38%|███▊      | 83/217 [43:11<31:20, 14.04s/it]gpt_only/val_only:  39%|███▊      | 84/217 [43:27<32:34, 14.70s/it]gpt_only/val_only:  39%|███▉      | 85/217 [43:38<29:58, 13.63s/it]gpt_only/val_only:  40%|███▉      | 86/217 [43:57<32:47, 15.02s/it]gpt_only/val_only:  40%|████      | 87/217 [45:20<1:13:37, 33.98s/it]  [SKIP] Index 72: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 73 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 74 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 75 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 76 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 77 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 78 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 79 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 75 samples.
+
+  ── Sample 80 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 81: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 82 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 83 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 84 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 85 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 86 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+  [SKIP] Index 87: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 88 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+gpt_only/val_only:  41%|████      | 89/217 [45:44<51:32, 24.16s/it]  gpt_only/val_only:  41%|████▏     | 90/217 [45:58<46:09, 21.81s/it]gpt_only/val_only:  42%|████▏     | 91/217 [46:15<43:25, 20.68s/it]gpt_only/val_only:  42%|████▏     | 92/217 [46:34<41:43, 20.03s/it]gpt_only/val_only:  43%|████▎     | 93/217 [46:54<41:34, 20.11s/it]gpt_only/val_only:  43%|████▎     | 94/217 [47:18<43:17, 21.12s/it]gpt_only/val_only:  44%|████▍     | 95/217 [47:52<50:54, 25.04s/it]gpt_only/val_only:  44%|████▍     | 96/217 [48:09<45:30, 22.57s/it]gpt_only/val_only:  45%|████▍     | 97/217 [48:25<41:08, 20.57s/it]gpt_only/val_only:  45%|████▌     | 98/217 [48:48<42:17, 21.33s/it]gpt_only/val_only:  46%|████▌     | 99/217 [49:07<40:51, 20.77s/it]gpt_only/val_only:  47%|████▋     | 101/217 [49:32<32:43, 16.92s/it]gpt_only/val_only:  47%|████▋     | 102/217 [49:55<35:18, 18.42s/it]gpt_only/val_only:  47%|████▋     | 103/217 [50:32<44:15, 23.29s/it]    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 89 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 90 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 91 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 92 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 93 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 94 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 95 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 96 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 97 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 98 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+  [SKIP] Index 99: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 100 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 101 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 102 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 103 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+gpt_only/val_only:  48%|████▊     | 104/217 [51:09<50:48, 26.98s/it]gpt_only/val_only:  48%|████▊     | 105/217 [51:44<54:22, 29.13s/it]gpt_only/val_only:  49%|████▉     | 106/217 [52:07<51:02, 27.59s/it]gpt_only/val_only:  49%|████▉     | 107/217 [52:36<51:12, 27.93s/it]gpt_only/val_only:  50%|████▉     | 108/217 [53:02<49:45, 27.39s/it]gpt_only/val_only:  51%|█████     | 111/217 [53:19<26:53, 15.22s/it]gpt_only/val_only:  53%|█████▎    | 114/217 [54:51<37:49, 22.04s/it]gpt_only/val_only:  53%|█████▎    | 115/217 [55:15<38:12, 22.48s/it]gpt_only/val_only:  53%|█████▎    | 116/217 [55:31<35:38, 21.18s/it]gpt_only/val_only:  54%|█████▍    | 117/217 [55:45<32:46, 19.67s/it]gpt_only/val_only:  55%|█████▍    | 119/217 [56:08<26:57, 16.50s/it]gpt_only/val_only:  55%|█████▌    | 120/217 [56:28<27:39, 17.11s/it]gpt_only/val_only:  56%|█████▌    | 121/217 [56:45<27:29, 17.18s/it]         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 104 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (B1 → A2)  ↓ LOWERED
+         o3               → A2  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 2, 'B1': 1}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 105 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 106 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 107 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 100 samples.
+  [SKIP] Index 108: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 109: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 110 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+  [SKIP] Index 111: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 112: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 113 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (B1 → A2)  ↓ LOWERED
+         o3_mini          → B1  (A2 → B1)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('o3', 'B1→A2'), ('o3_mini', 'A2→B1')]
+    [VOTE] Distribution: {'A2': 2, 'B1': 1}  →  Final: A2
+  [✓] Truth=A2  Pred=A2
+
+  ── Sample 114 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 115 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 116 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+  [SKIP] Index 117: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 118 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 119 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 120 ──────────────────────────────
+    [R1] ⚠ o3_mini returned invalid/unparseable label: 'UNK' — raw output snippet: '{\n  "label": "B1",\n  "reason": "The speaker\'s response demonstrates a B1 level o'
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → UNK  ⚠ INVALID LABEL
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'UNK']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (UNK → B1)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'UNK→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 121 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+gpt_only/val_only:  56%|█████▌    | 122/217 [57:36<40:37, 25.66s/it]gpt_only/val_only:  57%|█████▋    | 123/217 [59:45<1:23:13, 53.13s/it]gpt_only/val_only:  57%|█████▋    | 124/217 [1:00:03<1:07:09, 43.33s/it]gpt_only/val_only:  58%|█████▊    | 126/217 [1:00:17<41:43, 27.51s/it]  gpt_only/val_only:  59%|█████▊    | 127/217 [1:00:35<37:46, 25.18s/it]gpt_only/val_only:  59%|█████▉    | 128/217 [1:01:05<39:07, 26.38s/it]gpt_only/val_only:  59%|█████▉    | 129/217 [1:01:25<36:13, 24.70s/it]gpt_only/val_only:  60%|█████▉    | 130/217 [1:01:43<33:13, 22.92s/it]gpt_only/val_only:  60%|██████    | 131/217 [1:03:04<56:11, 39.21s/it]gpt_only/val_only:  61%|██████    | 132/217 [1:03:19<45:33, 32.15s/it]gpt_only/val_only:  61%|██████▏   | 133/217 [1:03:34<38:04, 27.19s/it]gpt_only/val_only:  62%|██████▏   | 134/217 [1:03:59<37:00, 26.75s/it]gpt_only/val_only:  62%|██████▏   | 135/217 [1:04:28<37:26, 27.40s/it]gpt_only/val_only:  63%|██████▎   | 136/217 [1:04:51<34:54, 25.86s/it]         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 122 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 123 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 124: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 125 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 126 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 127 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 128 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 129 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 130 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 131 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 132 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 133 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 134 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 135 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 136: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 137 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+gpt_only/val_only:  64%|██████▎   | 138/217 [1:05:22<27:49, 21.14s/it]gpt_only/val_only:  64%|██████▍   | 139/217 [1:05:45<28:05, 21.61s/it]gpt_only/val_only:  65%|██████▍   | 140/217 [1:06:02<26:09, 20.39s/it]gpt_only/val_only:  65%|██████▍   | 141/217 [1:06:21<25:20, 20.01s/it]gpt_only/val_only:  66%|██████▌   | 143/217 [1:06:38<18:42, 15.16s/it]gpt_only/val_only:  66%|██████▋   | 144/217 [1:06:55<18:43, 15.39s/it]gpt_only/val_only:  67%|██████▋   | 145/217 [1:07:16<20:19, 16.94s/it]gpt_only/val_only:  67%|██████▋   | 146/217 [1:07:39<21:47, 18.42s/it]gpt_only/val_only:  68%|██████▊   | 147/217 [1:07:51<19:32, 16.75s/it]gpt_only/val_only:  68%|██████▊   | 148/217 [1:08:08<19:14, 16.73s/it]gpt_only/val_only:  69%|██████▊   | 149/217 [1:08:27<19:55, 17.58s/it]gpt_only/val_only:  69%|██████▉   | 150/217 [1:08:42<18:41, 16.74s/it]gpt_only/val_only:  70%|██████▉   | 151/217 [1:08:55<17:20, 15.77s/it]         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 138 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 139 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 125 samples.
+
+  ── Sample 140 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B2  Pred=A2
+  [SKIP] Index 141: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 142 ──────────────────────────────
+    [R1] ⚠ o3_mini returned invalid/unparseable label: 'UNK' — raw output snippet: '{\n  "label": "B1",\n  "reason": "The speaker communicates a clear opinion about s'
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → UNK  ⚠ INVALID LABEL
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'UNK']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (UNK → B1)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'UNK→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 143 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 144 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 145 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 146 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 147 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 148 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 149 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 150 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 151: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 152 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+gpt_only/val_only:  71%|███████   | 153/217 [1:09:06<11:47, 11.06s/it]gpt_only/val_only:  71%|███████   | 154/217 [1:09:22<12:47, 12.19s/it]gpt_only/val_only:  71%|███████▏  | 155/217 [1:09:44<15:15, 14.76s/it]gpt_only/val_only:  72%|███████▏  | 156/217 [1:09:59<15:09, 14.90s/it]gpt_only/val_only:  72%|███████▏  | 157/217 [1:12:29<52:22, 52.38s/it]gpt_only/val_only:  73%|███████▎  | 158/217 [1:12:52<43:28, 44.21s/it]gpt_only/val_only:  73%|███████▎  | 159/217 [1:13:10<35:27, 36.67s/it]gpt_only/val_only:  74%|███████▎  | 160/217 [1:13:34<31:07, 32.76s/it]gpt_only/val_only:  74%|███████▍  | 161/217 [1:13:49<25:42, 27.54s/it]gpt_only/val_only:  75%|███████▍  | 162/217 [1:14:13<24:26, 26.66s/it]gpt_only/val_only:  75%|███████▌  | 163/217 [1:14:43<24:54, 27.67s/it]gpt_only/val_only:  76%|███████▌  | 164/217 [1:15:08<23:31, 26.63s/it]gpt_only/val_only:  76%|███████▌  | 165/217 [1:15:24<20:29, 23.64s/it]gpt_only/val_only:  76%|███████▋  | 166/217 [1:15:53<21:20, 25.10s/it]    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 153 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 154 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 155 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 156 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 157 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 158 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 159 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 160 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 161 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 162 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 163 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 164 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+
+  ── Sample 165 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 166 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → A2
+gpt_only/val_only:  77%|███████▋  | 167/217 [1:17:39<41:05, 49.32s/it]gpt_only/val_only:  77%|███████▋  | 168/217 [1:17:54<31:52, 39.03s/it]gpt_only/val_only:  78%|███████▊  | 169/217 [1:19:24<43:31, 54.40s/it]gpt_only/val_only:  79%|███████▉  | 171/217 [1:19:42<25:43, 33.54s/it]gpt_only/val_only:  81%|████████  | 175/217 [1:20:10<12:50, 18.35s/it]gpt_only/val_only:  81%|████████  | 176/217 [1:20:28<12:28, 18.27s/it]gpt_only/val_only:  82%|████████▏ | 178/217 [1:20:43<09:40, 14.88s/it]gpt_only/val_only:  83%|████████▎ | 180/217 [1:21:00<07:54, 12.83s/it]gpt_only/val_only:  83%|████████▎ | 181/217 [1:21:16<08:04, 13.46s/it]gpt_only/val_only:  84%|████████▍ | 182/217 [1:21:33<08:10, 14.03s/it]gpt_only/val_only:  84%|████████▍ | 183/217 [1:21:49<08:12, 14.48s/it]gpt_only/val_only:  85%|████████▍ | 184/217 [1:22:15<09:36, 17.48s/it]gpt_only/val_only:  85%|████████▌ | 185/217 [1:22:39<10:16, 19.26s/it]    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✓] Truth=A2  Pred=A2
+
+  [Checkpoint] Running metrics saved at 150 samples.
+
+  ── Sample 167 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 168 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 169: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 170 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+  [SKIP] Index 171: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 172: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 173: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 174 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 175 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 176: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 177 ──────────────────────────────
+    [R1] ⚠ o3_mini returned invalid/unparseable label: 'UNK' — raw output snippet: '{\n  "label": "B1",\n  "reason": "The speaker demonstrates an independent level of'
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → UNK  ⚠ INVALID LABEL
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'UNK']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (UNK → B1)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'UNK→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=B2  Pred=B1
+  [SKIP] Index 178: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 179 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 180 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 181 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 182 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 183 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 184 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 185 ──────────────────────────────
+gpt_only/val_only:  86%|████████▌ | 186/217 [1:22:58<09:51, 19.08s/it]gpt_only/val_only:  86%|████████▌ | 187/217 [1:23:23<10:24, 20.83s/it]gpt_only/val_only:  87%|████████▋ | 189/217 [1:23:46<07:47, 16.68s/it]gpt_only/val_only:  88%|████████▊ | 190/217 [1:24:01<07:19, 16.27s/it]gpt_only/val_only:  88%|████████▊ | 192/217 [1:25:16<10:21, 24.88s/it]gpt_only/val_only:  89%|████████▉ | 193/217 [1:25:37<09:35, 23.99s/it]gpt_only/val_only:  89%|████████▉ | 194/217 [1:26:04<09:25, 24.59s/it]gpt_only/val_only:  90%|████████▉ | 195/217 [1:26:33<09:29, 25.89s/it]gpt_only/val_only:  90%|█████████ | 196/217 [1:26:59<09:01, 25.77s/it]gpt_only/val_only:  91%|█████████ | 197/217 [1:27:29<09:02, 27.13s/it]gpt_only/val_only:  91%|█████████ | 198/217 [1:28:01<08:59, 28.39s/it]gpt_only/val_only:  92%|█████████▏| 200/217 [1:28:18<05:32, 19.57s/it]    [R1] ⚠ o3_mini returned invalid/unparseable label: 'UNK' — raw output snippet: '{\n  "label": "B1",\n  "reason": "The speaker exhibits an independent level of pro'
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → UNK  ⚠ INVALID LABEL
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'UNK']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (UNK → B1)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'UNK→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 186 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B2
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (B1 → B2)  ↑ RAISED
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B1→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+  [SKIP] Index 187: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 188 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 189 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 190: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 191 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 192 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 193 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 194 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (B1 → B2)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✓] Truth=B2  Pred=B2
+
+  ── Sample 195 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (B1 → B2)  ↑ RAISED
+         o3               → B1  (B2 → B1)  ↓ LOWERED
+         o3_mini          → B1  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o', 'B1→B2'), ('o3', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 196 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 2, 'B1': 1}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 197 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+  [SKIP] Index 198: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 199 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (B2 → B1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 200 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → B1
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (A2 → B1)  ↑ RAISED
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+gpt_only/val_only:  93%|█████████▎| 201/217 [1:28:45<05:41, 21.35s/it]gpt_only/val_only:  93%|█████████▎| 202/217 [1:30:10<09:23, 37.59s/it]gpt_only/val_only:  95%|█████████▍| 206/217 [1:30:33<03:26, 18.73s/it]gpt_only/val_only:  95%|█████████▌| 207/217 [1:30:46<02:56, 17.66s/it]gpt_only/val_only:  96%|█████████▌| 208/217 [1:30:59<02:30, 16.67s/it]gpt_only/val_only:  96%|█████████▋| 209/217 [1:31:34<02:46, 20.79s/it]gpt_only/val_only:  97%|█████████▋| 210/217 [1:31:52<02:20, 20.14s/it]gpt_only/val_only:  97%|█████████▋| 211/217 [1:32:05<01:50, 18.46s/it]gpt_only/val_only:  98%|█████████▊| 212/217 [1:32:22<01:29, 17.98s/it]gpt_only/val_only:  98%|█████████▊| 213/217 [1:32:44<01:16, 19.17s/it]gpt_only/val_only:  99%|█████████▊| 214/217 [1:33:02<00:56, 18.84s/it]gpt_only/val_only:  99%|█████████▉| 215/217 [1:33:15<00:33, 16.99s/it]gpt_only/val_only: 100%|█████████▉| 216/217 [1:33:30<00:16, 16.50s/it]gpt_only/val_only: 100%|██████████| 217/217 [1:33:50<00:00, 17.60s/it]gpt_only/val_only: 100%|██████████| 217/217 [1:33:50<00:00, 25.95s/it]
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'A2→B1')]
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  [Checkpoint] Running metrics saved at 175 samples.
+
+  ── Sample 201 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+  [SKIP] Index 202: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 203: invalid ground-truth label 'NATIVE'.
+  [SKIP] Index 204: invalid ground-truth label 'NATIVE'.
+
+  ── Sample 205 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 206 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 207 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 208 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (B1 → B2)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 209 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B2
+         o3_mini          → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o            → B2  (unchanged)
+         o3               → B2  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+  [✗] Truth=B1  Pred=B2
+
+  ── Sample 210 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 211 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 212 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B2
+         o3               → B1
+         o3_mini          → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1', 'B2']
+    [R2] Label updates after debate:
+         gpt4o            → B1  (B2 → B1)  ↓ LOWERED
+         o3               → B1  (unchanged)
+         o3_mini          → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o', 'B2→B1')]
+    [VOTE] Distribution: {'B1': 2, 'B2': 1}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 213 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → A2
+         o3               → A2
+         o3_mini          → B1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1']
+    [R2] Label updates after debate:
+         gpt4o            → A2  (unchanged)
+         o3               → A2  (unchanged)
+         o3_mini          → A2  (B1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('o3_mini', 'B1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+  [✗] Truth=B1  Pred=A2
+
+  ── Sample 214 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✗] Truth=A2  Pred=B1
+
+  ── Sample 215 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  ── Sample 216 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o            → B1
+         o3               → B1
+         o3_mini          → B1
+    [R1] ✓ Full agreement on B1
+    [R2] Label updates after debate:
+         gpt4o            → B1  (unchanged)
+         o3               → B1  (unchanged)
+         o3_mini          → B1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1': 3}  →  Final: B1
+  [✓] Truth=B1  Pred=B1
+
+  Skipped 29 samples (empty or invalid labels).
+
+=======================================================
+  gpt_only / val_only  (n=188)
+───────────────────────────────────────────────────────
+  Metric              Value
+───────────────────────────────────────────────────────
+  ACC              59.5700%
+  ACC_ADJ          98.9400%
+  ACC_MC           40.4800%
+  ACC_MC_ADJ       97.9200%
+  RMSE              0.6604
+  RMSE_MC           0.7897
+  PCC               0.2132
+=======================================================
+  Results saved → ../logs/val_only_native/gpt_only_val_only_results.json
+  Full logs saved → ../logs/val_only_native/gpt_only_val_only_logs.jsonl
+
+############################################################
+  POST-HOC ERROR ANALYSIS  —  GPT-only / val_only
+############################################################
+
+  Samples total   : 188
+  Correct         : 112  (59.6%)
+  Errors          : 76  (40.4%)
+
+  Error direction:
+    Exact match  : 112
+    Over-rated   : 40  (model predicted higher level than ground truth)
+    Under-rated  : 36 (model predicted lower level than ground truth)
+
+  Per-class accuracy:
+    A2:    3/20  exact ( 15.0%)   adj:  20/20  (100.0%)
+    B1:   98/136 exact ( 72.1%)   adj: 136/136 (100.0%)
+    B2:   11/32  exact ( 34.4%)   adj:  30/32  ( 93.8%)
+
+  Most common error pairs (truth → pred):
+    B1 → B2  :   23x  ███████████████████████
+    B2 → B1  :   19x  ███████████████████
+    A2 → B1  :   17x  █████████████████
+    B1 → A2  :   15x  ███████████████
+    B2 → A2  :    2x  ██
+
+  Round 1 disagreement analysis:
+    Full agreement    : 131
+    Partial agreement : 56
+    Full disagreement : 1
+    Accuracy when R1 fully agreed: 77/131 = 58.8%
+
+  Round 1 → Round 2 label shift analysis:
+    Total model-positions : 564
+    Label shifts (R1→R2)  : 63 (11.2%)
+    Shifts that helped    : 39  (R1 wrong → R2 correct)
+    Shifts that hurt      : 21   (R1 correct → R2 wrong)
+
+  ⚠ UNK label appearances: 5 samples affected
+    (UNK means the model output could not be parsed as valid CEFR.)
+    Affected indices: [18, 120, 142, 177, 185]
+
+  Sample error cases (first 5):
+
+    [Index 5]
+    Truth: B2  |  Pred: B1
+    R1 labels : {'gpt4o': 'B1', 'o3': 'B1', 'o3_mini': 'B2'}
+    R2 labels : {'gpt4o': 'B1', 'o3': 'B1', 'o3_mini': 'B1'}
+    Snippet   : ﻿I agree with the statement that college students should have a part-time job because first of all college students can have social experience before ...
+
+    [Index 7]
+    Truth: B1  |  Pred: B2
+    R1 labels : {'gpt4o': 'B1', 'o3': 'B2', 'o3_mini': 'B2'}
+    R2 labels : {'gpt4o': 'B2', 'o3': 'B2', 'o3_mini': 'B2'}
+    Snippet   : ﻿As a working – for a working student, I agree with that statement because it may be hard, but as long as they can balance, I think they could push it...
+
+    [Index 9]
+    Truth: B1  |  Pred: B2
+    R1 labels : {'gpt4o': 'B2', 'o3': 'B2', 'o3_mini': 'B2'}
+    R2 labels : {'gpt4o': 'B2', 'o3': 'B2', 'o3_mini': 'B2'}
+    Snippet   : ﻿I disagree to the statements because I believe that college students have a primary role and that role is to be focused and to be 100% concentrating ...
+
+    [Index 12]
+    Truth: B2  |  Pred: B1
+    R1 labels : {'gpt4o': 'B1', 'o3': 'B2', 'o3_mini': 'B1'}
+    R2 labels : {'gpt4o': 'B2', 'o3': 'B1', 'o3_mini': 'B1'}
+    Snippet   : ﻿So, as I have mentioned before I think smoking should be banned in all restaurants, because first it – um – it affects one's appetite, you know, when...
+
+    [Index 14]
+    Truth: A2  |  Pred: B1
+    R1 labels : {'gpt4o': 'A2', 'o3': 'B1', 'o3_mini': 'B1'}
+    R2 labels : {'gpt4o': 'B1', 'o3': 'B1', 'o3_mini': 'B1'}
+    Snippet   : ﻿
+
+I disagree this idea.  It is important to have a part-time job to make money and make life.  College student have many – many clubs or many club ac...
+
+############################################################
+
+
+Combined summary saved → ../logs/val_only_native/gpt_only_all_splits_summary.json
