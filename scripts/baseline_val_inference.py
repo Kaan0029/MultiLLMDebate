@@ -38,11 +38,11 @@ MAX_AUDIO_LEN = 16000 * 60
 K_PROTO       = 3
 SEED          = 42
 
-# 4-label merged space for comparison with multi-LLM pipeline
-MERGED_LABELS   = ["A2", "B1", "B2", "native"]
+# No merging needed — multi-LLM now uses same 5-label space as baseline
+MERGED_LABELS   = ["A2", "B1_1", "B1_2", "B2", "native"]
 LABEL2ID_MERGED = {l: i for i, l in enumerate(MERGED_LABELS)}
 ID2LABEL_MERGED = {i: l for l, i in LABEL2ID_MERGED.items()}
-B1_MERGE        = {"B1_1": "B1", "B1_2": "B1"}  # maps 5-label → 4-label
+B1_MERGE        = {}  # no merging — B1_1 and B1_2 kept separate
 
 
 def set_seed(s):
@@ -222,19 +222,8 @@ def save_metrics(m, tag, filename):
 
 
 def merge_predictions(y_true, y_pred, label2id_5):
-    """
-    Converts 5-label integer predictions to 4-label integers
-    by merging B1_1 and B1_2 → B1.
-    """
-    # Build int→int map from 5-label IDs to 4-label IDs
-    id_map = {}
-    for label_5, id_5 in label2id_5.items():
-        label_4   = B1_MERGE.get(label_5, label_5)
-        id_map[id_5] = LABEL2ID_MERGED.get(label_4, id_5)
-
-    y_true_m = [id_map.get(v, v) for v in y_true]
-    y_pred_m = [id_map.get(v, v) for v in y_pred]
-    return y_true_m, y_pred_m
+    """No merging needed — both pipelines use the same 5-label space."""
+    return y_true, y_pred
 
 
 # ── Main ──────────────────────────────────────────────────

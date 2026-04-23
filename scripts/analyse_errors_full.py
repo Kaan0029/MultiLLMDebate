@@ -13,8 +13,10 @@ import argparse
 from pathlib import Path
 from collections import defaultdict
 
-CEFR_LEVELS  = ["A1", "A2", "B1", "B2", "C1", "C2"]
-CEFR_TO_NUM  = {"A1": 1, "A2": 2, "B1": 3, "B2": 4, "C1": 5, "C2": 6}
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from metrics import CEFR_LEVELS, CEFR_TO_NUM
 
 
 # ─────────────────────────────────────────────────────────

@@ -1,46 +1,56 @@
 FULL DEBATE PIPELINE ANALYSIS REPORT
 Log: ../logs/val_only_native/gpt_referee_val_only_logs.jsonl
-Samples: 188
+Samples: 217
 
 ============================================================
   1. OVERALL SUMMARY
 ────────────────────────────────────────────────────────────
-  Total samples    : 188
-  Correct          : 109  (58.0%)
-  Errors           : 79   (42.0%)
+  Total samples    : 217
+  Correct          : 68  (31.3%)
+  Errors           : 149   (68.7%)
 
 ============================================================
   2. PER-CLASS ACCURACY
 ────────────────────────────────────────────────────────────
   Level      Total   Correct      ACC    ADJ±1
   ─────────────────────────────────────────────
-  A2            20         3    15.0%   100.0%
-  B1           136        96    70.6%   100.0%
-  B2            32        10    31.2%    96.9%
+  A2            20         2    10.0%    80.0%
+  B1_1          44        24    54.5%   100.0%
+  B1_2          92        33    35.9%    96.7%
+  B2            32         7    21.9%    65.6%
+  native        29         2     6.9%    65.5%
 
 ============================================================
   3. CONFUSION PAIRS (truth → prediction)
 ────────────────────────────────────────────────────────────
   Truth→Pred         Count Bar
   ─────────────────────────────────────────────
-  B2→B1                21  █████████████████████
-  B1→B2                21  █████████████████████
-  B1→A2                19  ███████████████████
-  A2→B1                17  █████████████████
-  B2→A2                 1  █
+  B1_2→B1_1              45  █████████████████████████████████████████████
+  native→B2                17  █████████████████
+  B1_1→B1_2              16  ████████████████
+  B2→B1_2              14  ██████████████
+  A2→B1_1              14  ██████████████
+  B1_2→B2                11  ███████████
+  B2→B1_1               9  █████████
+  native→B1_2               8  ████████
+  B1_1→A2                 4  ████
+  A2→B1_2               4  ████
+  B1_2→A2                 3  ███
+  B2→A2                 2  ██
+  native→B1_1               2  ██
 
 ============================================================
   4. ERROR DIRECTION
 ────────────────────────────────────────────────────────────
-  Over-rated  (pred > truth) : 38   (48.1%  of errors)
-  Under-rated (pred < truth) : 41  (51.9% of errors)
+  Over-rated  (pred > truth) : 45   (30.2%  of errors)
+  Under-rated (pred < truth) : 104  (69.8% of errors)
 
 ============================================================
   5. ERROR ORIGIN: WHERE DID IT GO WRONG?
 ────────────────────────────────────────────────────────────
-  Error already in R1, persisted to final : 78  (98.7% of errors)
-  R1 was correct but R2 introduced error  : 1  (1.3% of errors)
-  R1 was wrong but R2 recovered correctly : 6
+  Error already in R1, persisted to final : 146  (98.0% of errors)
+  R1 was correct but R2 introduced error  : 3  (2.0% of errors)
+  R1 was wrong but R2 recovered correctly : 13
 
   → If R1-caused errors dominate: improve Round 1 prompt or examples.
   → If R2-caused errors dominate: debate is hurting — make R2 more conservative.
@@ -50,36 +60,36 @@ Samples: 188
 ────────────────────────────────────────────────────────────
   Model              Correct   Total      ACC
   ─────────────────────────────────────────────
-  gpt4o_text              93     188    49.5%
-  o3                     109     188    58.0%
-  o3_mini                105     188    55.9%
+  gpt4o_text              58     217    26.7%
+  o3                      73     217    33.6%
+  o3_mini                 49     217    22.6%
 
 ============================================================
   7. PER-MODEL ACCURACY IN ROUND 2
 ────────────────────────────────────────────────────────────
   Model              Correct   Total      ACC
   ─────────────────────────────────────────────
-  gpt4o_text             104     188    55.3%
-  o3                     111     188    59.0%
-  o3_mini                104     188    55.3%
+  gpt4o_text              68     217    31.3%
+  o3                      67     217    30.9%
+  o3_mini                 61     217    28.1%
 
 ============================================================
   8. LABEL SHIFTS R1→R2 PER MODEL (helped=R1 wrong→R2 correct, hurt=R1 correct→R2 wrong)
 ────────────────────────────────────────────────────────────
   Model              Shifts   Total   Shift%   Helped   Hurt
   ────────────────────────────────────────────────────────────
-  gpt4o_text             24     188    12.8%       17      6
-  o3                      4     188     2.1%        3      1
-  o3_mini                27     188    14.4%       12     13
+  gpt4o_text             57     217    26.3%       21     11
+  o3                     10     217     4.6%        1      7
+  o3_mini                46     217    21.2%       20      8
 
 ============================================================
   9. INTER-MODEL AGREEMENT IN ROUND 1
 ────────────────────────────────────────────────────────────
-  Full agreement    : 133   (70.7%)
-  Partial agreement : 54  (28.7%)
-  Full disagreement : 1   (0.5%)
+  Full agreement    : 116   (53.5%)
+  Partial agreement : 96  (44.2%)
+  Full disagreement : 5   (2.3%)
 
-  When R1 fully agreed, how often was it correct: 75/133 = 56.4%
+  When R1 fully agreed, how often was it correct: 31/116 = 26.7%
 
   → High full-agreement + wrong = models share a systematic bias.
   → High disagreement = task is genuinely ambiguous at this level.
@@ -87,11 +97,11 @@ Samples: 188
 ============================================================
   10. REFEREE ANALYSIS
 ────────────────────────────────────────────────────────────
-  Samples with referee       : 188
-  Referee agreed with majority : 185  (98.4%)
-  Referee changed decision   : 3  (1.6%)
+  Samples with referee       : 217
+  Referee agreed with majority : 213  (98.2%)
+  Referee changed decision   : 4  (1.8%)
   Clamp triggered            : 0  (0.0%)
-  Of changes: helped=3  hurt=0
+  Of changes: helped=4  hurt=0
 
   → If hurt > helped: referee is net negative, consider removing.
   → If clamp fires often: referee is too aggressive, tighten prompt.
@@ -99,7 +109,7 @@ Samples: 188
 ============================================================
   11. UNK / PARSE FAILURE ANALYSIS
 ────────────────────────────────────────────────────────────
-  UNK in R1 outputs  : 3
+  UNK in R1 outputs  : 8
   UNK in R2 outputs  : 0
   UNK as final label : 0
 

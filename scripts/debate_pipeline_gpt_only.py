@@ -238,9 +238,8 @@ def run_split(split_name, csv_paths, log_dir="../logs"):
         for idx, row in tqdm(df.iterrows(), total=len(df),
                              desc=f"gpt_only/{split_name}"):
 
-            truth = str(row["cefr_label"]).strip().upper()
-            if truth in ("B1_1", "B1_2"):
-                truth = "B1"
+            truth = str(row["cefr_label"]).strip()
+
             transcript = str(row.get("transcript", "")).strip()
 
             # ── Skip guard ────────────────────────────────────────────────
