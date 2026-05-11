@@ -1,0 +1,15 @@
+{
+  "variant": "transcript_1ex",
+  "n_examples_per_class": 1,
+  "n_samples": 217,
+  "skipped": 0,
+  "metrics": {
+    "ACC": 34.56,
+    "ACC_ADJ": 86.64,
+    "ACC_MC": 27.42,
+    "ACC_MC_ADJ": 81.83,
+    "RMSE": 1.0604,
+    "RMSE_MC": 1.136,
+    "PCC": 0.5075
+  }
+}

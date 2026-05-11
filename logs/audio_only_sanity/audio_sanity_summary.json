@@ -1,0 +1,29 @@
+{
+  "audio_sanity_gpt_4o_audio_preview_1shot": {
+    "ACC": 28.57,
+    "ACC_ADJ": 76.5,
+    "ACC_MC": 33.21,
+    "ACC_MC_ADJ": 76.6,
+    "RMSE": 1.2572,
+    "RMSE_MC": 1.2231,
+    "PCC": 0.552
+  },
+  "audio_sanity_gpt_4o_audio_preview_2shot": {
+    "ACC": 30.41,
+    "ACC_ADJ": 80.65,
+    "ACC_MC": 36.78,
+    "ACC_MC_ADJ": 78.49,
+    "RMSE": 1.1797,
+    "RMSE_MC": 1.1571,
+    "PCC": 0.5952
+  },
+  "audio_sanity_gpt_4o_audio_preview_4shot": {
+    "ACC": 30.88,
+    "ACC_ADJ": 82.03,
+    "ACC_MC": 36.11,
+    "ACC_MC_ADJ": 80.03,
+    "RMSE": 1.1933,
+    "RMSE_MC": 1.1886,
+    "PCC": 0.5406
+  }
+}

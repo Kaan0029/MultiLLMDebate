@@ -1,0 +1,15 @@
+{
+  "pipeline": "audio_only",
+  "split": "val_only",
+  "n_samples": 217,
+  "skipped": 0,
+  "metrics": {
+    "ACC": 28.11,
+    "ACC_ADJ": 84.33,
+    "ACC_MC": 25.54,
+    "ACC_MC_ADJ": 79.99,
+    "RMSE": 1.1319,
+    "RMSE_MC": 1.1931,
+    "PCC": 0.4652
+  }
+}

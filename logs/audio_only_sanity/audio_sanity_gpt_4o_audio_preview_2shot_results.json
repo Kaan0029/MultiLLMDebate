@@ -1,0 +1,26 @@
+{
+  "pipeline": "audio_only_sanity_single_pass",
+  "tag": "audio_sanity_gpt_4o_audio_preview_2shot",
+  "model": "gpt-4o-audio-preview",
+  "split": "val_only",
+  "n_examples_per_class": 2,
+  "n_samples": 217,
+  "skipped": 0,
+  "api_failures": 0,
+  "metrics": {
+    "ACC": 30.41,
+    "ACC_ADJ": 80.65,
+    "ACC_MC": 36.78,
+    "ACC_MC_ADJ": 78.49,
+    "RMSE": 1.1797,
+    "RMSE_MC": 1.1571,
+    "PCC": 0.5952
+  },
+  "label_space": [
+    "A2_0",
+    "B1_1",
+    "B1_2",
+    "B2_0",
+    "XX_0"
+  ]
+}

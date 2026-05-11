@@ -1,0 +1,38 @@
+{
+  "transcript_1ex_referee": {
+    "ACC": 35.48,
+    "ACC_ADJ": 83.87,
+    "ACC_MC": 29.32,
+    "ACC_MC_ADJ": 77.44,
+    "RMSE": 1.084,
+    "RMSE_MC": 1.1624,
+    "PCC": 0.4867
+  },
+  "transcript_2ex_referee": {
+    "ACC": 32.72,
+    "ACC_ADJ": 84.79,
+    "ACC_MC": 27.37,
+    "ACC_MC_ADJ": 78.78,
+    "RMSE": 1.084,
+    "RMSE_MC": 1.1629,
+    "PCC": 0.4807
+  },
+  "transcript_4ex_referee": {
+    "ACC": 32.72,
+    "ACC_ADJ": 83.87,
+    "ACC_MC": 28.01,
+    "ACC_MC_ADJ": 78.25,
+    "RMSE": 1.0862,
+    "RMSE_MC": 1.1647,
+    "PCC": 0.4773
+  },
+  "transcript_8ex_referee": {
+    "ACC": 33.18,
+    "ACC_ADJ": 84.33,
+    "ACC_MC": 27.35,
+    "ACC_MC_ADJ": 78.64,
+    "RMSE": 1.0669,
+    "RMSE_MC": 1.1441,
+    "PCC": 0.4888
+  }
+}

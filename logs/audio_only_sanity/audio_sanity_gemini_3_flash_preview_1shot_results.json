@@ -1,0 +1,26 @@
+{
+  "pipeline": "audio_only_sanity_single_pass",
+  "tag": "audio_sanity_gemini_3_flash_preview_1shot",
+  "model": "gemini-3-flash-preview",
+  "split": "val_only",
+  "n_examples_per_class": 1,
+  "n_samples": 0,
+  "skipped": 0,
+  "api_failures": 0,
+  "metrics": {
+    "ACC": 0.0,
+    "ACC_ADJ": 0.0,
+    "ACC_MC": 0.0,
+    "ACC_MC_ADJ": 0.0,
+    "RMSE": 0.0,
+    "RMSE_MC": 0.0,
+    "PCC": 0.0
+  },
+  "label_space": [
+    "A2_0",
+    "B1_1",
+    "B1_2",
+    "B2_0",
+    "XX_0"
+  ]
+}

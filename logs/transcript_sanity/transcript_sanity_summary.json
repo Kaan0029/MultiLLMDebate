@@ -1,0 +1,29 @@
+{
+  "transcript_sanity_gpt_5_4_1shot": {
+    "ACC": 29.03,
+    "ACC_ADJ": 83.41,
+    "ACC_MC": 30.05,
+    "ACC_MC_ADJ": 82.65,
+    "RMSE": 1.14,
+    "RMSE_MC": 1.1345,
+    "PCC": 0.5633
+  },
+  "transcript_sanity_gpt_5_4_2shot": {
+    "ACC": 31.34,
+    "ACC_ADJ": 85.71,
+    "ACC_MC": 32.22,
+    "ACC_MC_ADJ": 83.02,
+    "RMSE": 1.0883,
+    "RMSE_MC": 1.1142,
+    "PCC": 0.5553
+  },
+  "transcript_sanity_gpt_5_4_4shot": {
+    "ACC": 32.26,
+    "ACC_ADJ": 85.71,
+    "ACC_MC": 33.47,
+    "ACC_MC_ADJ": 84.0,
+    "RMSE": 1.0733,
+    "RMSE_MC": 1.0883,
+    "PCC": 0.5665
+  }
+}

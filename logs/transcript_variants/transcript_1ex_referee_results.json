@@ -1,0 +1,24 @@
+{
+  "variant": "transcript_1ex_referee",
+  "n_examples_per_class": 1,
+  "n_samples": 217,
+  "skipped": 0,
+  "metrics": {
+    "ACC": 35.48,
+    "ACC_ADJ": 83.87,
+    "ACC_MC": 29.32,
+    "ACC_MC_ADJ": 77.44,
+    "RMSE": 1.084,
+    "RMSE_MC": 1.1624,
+    "PCC": 0.4867
+  },
+  "metrics_majority": {
+    "ACC": 36.41,
+    "ACC_ADJ": 84.33,
+    "ACC_MC": 29.75,
+    "ACC_MC_ADJ": 78.06,
+    "RMSE": 1.0733,
+    "RMSE_MC": 1.1533,
+    "PCC": 0.4928
+  }
+}

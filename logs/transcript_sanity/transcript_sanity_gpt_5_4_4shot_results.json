@@ -1,0 +1,26 @@
+{
+  "pipeline": "transcript_sanity_single_pass",
+  "tag": "transcript_sanity_gpt_5_4_4shot",
+  "model": "gpt-5.4",
+  "split": "val_only",
+  "n_examples_per_class": 4,
+  "n_samples": 217,
+  "skipped": 0,
+  "api_failures": 0,
+  "metrics": {
+    "ACC": 32.26,
+    "ACC_ADJ": 85.71,
+    "ACC_MC": 33.47,
+    "ACC_MC_ADJ": 84.0,
+    "RMSE": 1.0733,
+    "RMSE_MC": 1.0883,
+    "PCC": 0.5665
+  },
+  "label_space": [
+    "A2_0",
+    "B1_1",
+    "B1_2",
+    "B2_0",
+    "XX_0"
+  ]
+}

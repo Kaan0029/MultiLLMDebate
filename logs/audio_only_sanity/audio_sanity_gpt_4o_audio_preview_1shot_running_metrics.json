@@ -1,0 +1,10 @@
+{
+  "ACC": 28.57,
+  "ACC_ADJ": 76.67,
+  "ACC_MC": 33.59,
+  "ACC_MC_ADJ": 76.71,
+  "RMSE": 1.2574,
+  "RMSE_MC": 1.2198,
+  "PCC": 0.5551,
+  "samples_completed": 210
+}

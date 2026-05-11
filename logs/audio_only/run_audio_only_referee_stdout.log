@@ -1,0 +1,4087 @@
+
+============================================================
+  AUDIO-ONLY DEBATE PIPELINE
+  Models: gpt-4o-audio-preview x3
+  Referee: gpt-4o-audio-preview (enabled)
+  In-context: 1 audio example per class
+============================================================
+  Total samples: 217
+
+  ── Sample 0 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 1 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 2 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 3 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B2': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 4 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 5 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 6 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 7 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 8 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 9 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 10 samples.
+
+  ── Sample 10 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 11 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 12 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 13 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 14 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (A2 → B1_1)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'A2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 15 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 16 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 17 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 18 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 19 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  [Checkpoint] Running metrics saved at 20 samples.
+
+  ── Sample 20 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 21 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 22 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 23 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 24 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 25 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 26 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 27 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 28 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 29 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 30 samples.
+
+  ── Sample 30 ──────────────────────────────
+    [R1] ⚠ gpt4o_audio_2 invalid label: 'UNK'
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → UNK  ⚠ INVALID LABEL
+         gpt4o_audio_3    → B1_1
+    [R1] ✗ Total disagreement — all 3 models differ: {'gpt4o_audio_1': 'A2', 'gpt4o_audio_2': 'UNK', 'gpt4o_audio_3': 'B1_1'}
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (A2 → B1_1)  ↑ RAISED
+         gpt4o_audio_2    → A2  (UNK → A2)  ↑ RAISED
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'A2→B1_1'), ('gpt4o_audio_2', 'UNK→A2'), ('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 2, 'B1_1': 1}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 31 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 32 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 33 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 34 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 35 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 36 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 37 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 38 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 39 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 40 samples.
+
+  ── Sample 40 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 41 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B2  Final(ref)=B2
+
+  ── Sample 42 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 43 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 44 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 45 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 46 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 47 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 48 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 49 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 50 samples.
+
+  ── Sample 50 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 51 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 52 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 53 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 54 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 55 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 56 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 57 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 58 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 59 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 60 samples.
+
+  ── Sample 60 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 61 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 62 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 63 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 64 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 65 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 66 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 67 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 68 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 69 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=A2  Majority=A2  Final(ref)=A2
+
+  [Checkpoint] Running metrics saved at 70 samples.
+
+  ── Sample 70 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 71 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 72 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 73 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 74 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (B1_2 → B2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2'), ('gpt4o_audio_3', 'B1_2→B2')]
+    [VOTE] Distribution: {'B2': 2, 'B1_2': 1}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 75 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 76 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (A2 → B1_1)  ↑ RAISED
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'A2→B1_1'), ('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 2, 'B1_1': 1}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=A2  Majority=A2  Final(ref)=A2
+
+  ── Sample 77 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 78 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 79 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 80 samples.
+
+  ── Sample 80 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 81 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 82 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 83 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 84 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 85 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 86 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 87 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 88 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 89 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 90 samples.
+
+  ── Sample 90 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 91 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 92 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2'), ('gpt4o_audio_2', 'B1_2→B2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B2': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 93 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 94 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 95 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 96 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 97 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 98 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 99 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 100 samples.
+
+  ── Sample 100 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 101 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 102 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 103 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (B2 → B1_2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 104 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 105 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 106 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (B2 → B1_2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 107 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 108 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 109 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 110 samples.
+
+  ── Sample 110 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 111 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → native
+         gpt4o_audio_2    → native
+         gpt4o_audio_3    → native
+    [R1] ✓ Full agreement on native
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → native  (unchanged)
+         gpt4o_audio_2    → native  (unchanged)
+         gpt4o_audio_3    → native  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'native': 3}  →  Final: native
+    [REF]  Majority label : native
+    [REF]  Referee said   : native
+    [REF]  After clamp    : native
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=native  Majority=native  Final(ref)=native
+
+  ── Sample 112 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 113 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (A2 → B1_1)  ↑ RAISED
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'A2→B1_1'), ('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'B1_1': 2, 'A2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 114 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 115 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 116 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 117 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 118 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B2'), ('gpt4o_audio_2', 'B2→B1_2')]
+    [VOTE] Distribution: {'B2': 2, 'B1_2': 1}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ~ Referee overrode majority (within ±1, clamp not triggered).
+  [✓] Truth=B1_2  Majority=B2  Final(ref)=B1_2
+
+  ── Sample 119 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B1_1': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ~ Referee overrode majority (within ±1, clamp not triggered).
+  [✗] Truth=A2  Majority=B1_2  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 120 samples.
+
+  ── Sample 120 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 121 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 122 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 123 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 124 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 125 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 126 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 127 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 128 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B1_2
+    [R1] ✗ Total disagreement — all 3 models differ: {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'B2', 'gpt4o_audio_3': 'B1_2'}
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_2', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 129 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B1_2  Final(ref)=B1_2
+
+  [Checkpoint] Running metrics saved at 130 samples.
+
+  ── Sample 130 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 131 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 132 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 133 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 134 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 135 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 136 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 137 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 138 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 139 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 140 samples.
+
+  ── Sample 140 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=A2  Final(ref)=A2
+
+  ── Sample 141 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_2→B1_1'), ('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 142 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (A2 → B1_1)  ↑ RAISED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→A2'), ('gpt4o_audio_3', 'A2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'A2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 143 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 144 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 145 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B2  Final(ref)=B2
+
+  ── Sample 146 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 147 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 148 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 149 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 150 samples.
+
+  ── Sample 150 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 151 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 152 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 153 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 154 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 155 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 156 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 157 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 158 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 159 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 160 samples.
+
+  ── Sample 160 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 161 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 162 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 163 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 164 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 165 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 166 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=A2  Majority=A2  Final(ref)=A2
+
+  ── Sample 167 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 168 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 169 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 170 samples.
+
+  ── Sample 170 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 171 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → native
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B2', 'native']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (native → B2)  ↓ LOWERED
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'native→B2')]
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 172 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 173 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 174 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 175 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 176 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → native
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B2', 'native']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → native  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 2, 'native': 1}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 177 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B2  (B1_2 → B2)  ↑ RAISED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2'), ('gpt4o_audio_2', 'B2→B1_2'), ('gpt4o_audio_3', 'B1_2→B2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B2': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 178 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 179 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_1→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_2  Final(ref)=B1_2
+
+  [Checkpoint] Running metrics saved at 180 samples.
+
+  ── Sample 180 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 181 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 182 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 183 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 184 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 185 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 186 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B1_2  (B2 → B1_2)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B2'), ('gpt4o_audio_2', 'B2→B1_2'), ('gpt4o_audio_3', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B2': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 187 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → native
+         gpt4o_audio_3    → native
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B2', 'native']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → native  (B2 → native)  ↑ RAISED
+         gpt4o_audio_2    → native  (unchanged)
+         gpt4o_audio_3    → native  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B2→native')]
+    [VOTE] Distribution: {'native': 3}  →  Final: native
+    [REF]  Majority label : native
+    [REF]  Referee said   : native
+    [REF]  After clamp    : native
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=native  Majority=native  Final(ref)=native
+
+  ── Sample 188 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (A2 → B1_1)  ↑ RAISED
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'A2→B1_1'), ('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'B1_1': 2, 'A2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ~ Referee overrode majority (within ±1, clamp not triggered).
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=A2
+
+  ── Sample 189 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  [Checkpoint] Running metrics saved at 190 samples.
+
+  ── Sample 190 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 191 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (B1_1 → A2)  ↓ LOWERED
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_3', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 192 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 193 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_2    → B1_2  (B1_1 → B1_2)  ↑ RAISED
+         gpt4o_audio_3    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B1_1'), ('gpt4o_audio_2', 'B1_1→B1_2'), ('gpt4o_audio_3', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 2, 'B1_2': 1}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 194 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B2  Majority=B2  Final(ref)=B2
+
+  ── Sample 195 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_2    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] 2/3 model(s) changed label: [('gpt4o_audio_1', 'B1_2→B2'), ('gpt4o_audio_2', 'B2→B1_2')]
+    [VOTE] Distribution: {'B2': 2, 'B1_2': 1}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 196 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_2', 'B2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (B2 → B1_2)  ↓ LOWERED
+         gpt4o_audio_2    → B2  (B1_2 → B2)  ↑ RAISED
+         gpt4o_audio_3    → B1_2  (B2 → B1_2)  ↓ LOWERED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B2→B1_2'), ('gpt4o_audio_2', 'B1_2→B2'), ('gpt4o_audio_3', 'B2→B1_2')]
+    [VOTE] Distribution: {'B1_2': 2, 'B2': 1}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 197 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 198 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 199 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 200 samples.
+
+  ── Sample 200 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ✓ Full agreement on A2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 201 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 202 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 203 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 204 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=native  Majority=B2  Final(ref)=B2
+
+  ── Sample 205 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_2    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (A2 → B1_1)  ↑ RAISED
+    [R2] 3/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→A2'), ('gpt4o_audio_2', 'B1_1→A2'), ('gpt4o_audio_3', 'A2→B1_1')]
+    [VOTE] Distribution: {'A2': 2, 'B1_1': 1}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=A2  Majority=A2  Final(ref)=A2
+
+  ── Sample 206 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 207 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 208 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B2  Final(ref)=B2
+
+  ── Sample 209 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B2
+         gpt4o_audio_2    → B2
+         gpt4o_audio_3    → B2
+    [R1] ✓ Full agreement on B2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B2  (unchanged)
+         gpt4o_audio_2    → B2  (unchanged)
+         gpt4o_audio_3    → B2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B2': 3}  →  Final: B2
+    [REF]  Majority label : B2
+    [REF]  Referee said   : B2
+    [REF]  After clamp    : B2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=B2  Final(ref)=B2
+
+  [Checkpoint] Running metrics saved at 210 samples.
+
+  ── Sample 210 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 211 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → A2
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (unchanged)
+         gpt4o_audio_2    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=A2  Final(ref)=A2
+
+  ── Sample 212 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_2
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_2
+    [R1] ✓ Full agreement on B1_2
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_2  (unchanged)
+         gpt4o_audio_2    → B1_2  (unchanged)
+         gpt4o_audio_3    → B1_2  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_2': 3}  →  Final: B1_2
+    [REF]  Majority label : B1_2
+    [REF]  Referee said   : B1_2
+    [REF]  After clamp    : B1_2
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_2  Majority=B1_2  Final(ref)=B1_2
+
+  ── Sample 213 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → A2
+         gpt4o_audio_3    → A2
+    [R1] ~ Partial disagreement — 2 distinct labels: ['A2', 'B1_1']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → A2  (B1_1 → A2)  ↓ LOWERED
+         gpt4o_audio_2    → A2  (unchanged)
+         gpt4o_audio_3    → A2  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_1', 'B1_1→A2')]
+    [VOTE] Distribution: {'A2': 3}  →  Final: A2
+    [REF]  Majority label : A2
+    [REF]  Referee said   : A2
+    [REF]  After clamp    : A2
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_1  Majority=A2  Final(ref)=A2
+
+  ── Sample 214 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=A2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 215 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_1
+         gpt4o_audio_3    → B1_1
+    [R1] ✓ Full agreement on B1_1
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (unchanged)
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] No models changed their label.
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✗] Truth=B1_2  Majority=B1_1  Final(ref)=B1_1
+
+  ── Sample 216 ──────────────────────────────
+    [R1] Individual predictions:
+         gpt4o_audio_1    → B1_1
+         gpt4o_audio_2    → B1_2
+         gpt4o_audio_3    → B1_1
+    [R1] ~ Partial disagreement — 2 distinct labels: ['B1_1', 'B1_2']
+    [R2] Label updates after debate:
+         gpt4o_audio_1    → B1_1  (unchanged)
+         gpt4o_audio_2    → B1_1  (B1_2 → B1_1)  ↓ LOWERED
+         gpt4o_audio_3    → B1_1  (unchanged)
+    [R2] 1/3 model(s) changed label: [('gpt4o_audio_2', 'B1_2→B1_1')]
+    [VOTE] Distribution: {'B1_1': 3}  →  Final: B1_1
+    [REF]  Majority label : B1_1
+    [REF]  Referee said   : B1_1
+    [REF]  After clamp    : B1_1
+    [REF]  ✓ Referee agreed with majority.
+  [✓] Truth=B1_1  Majority=B1_1  Final(ref)=B1_1
+
+  Skipped 0 samples.
+
+=======================================================
+  audio_only_referee / val FINAL  (n=217)
+───────────────────────────────────────────────────────
+  Metric              Value
+───────────────────────────────────────────────────────
+  ACC              25.3500%
+  ACC_ADJ          83.4100%
+  ACC_MC           24.3400%
+  ACC_MC_ADJ       80.4300%
+  RMSE              1.1560
+  RMSE_MC           1.1955
+  PCC               0.4793
+=======================================================
+
+=======================================================
+  audio_only_referee / val MAJORITY (pre-referee)
+───────────────────────────────────────────────────────
+  Metric              Value
+───────────────────────────────────────────────────────
+  ACC              24.8800%
+  ACC_ADJ          83.4100%
+  ACC_MC           24.1200%
+  ACC_MC_ADJ       79.6500%
+  RMSE              1.1580
+  RMSE_MC           1.2058
+  PCC               0.4718
+=======================================================
+  Results saved → ../logs/audio_only/audio_only_referee_val_results.json
+
+############################################################
+  POST-HOC ERROR ANALYSIS  —  Audio-only
+############################################################
+
+  Samples total   : 217
+  Correct         : 55  (25.3%)
+  Errors          : 162  (74.7%)
+
+  Error direction:
+    Exact match  : 55
+    Over-rated   : 52  (model predicted higher level than ground truth)
+    Under-rated  : 110 (model predicted lower level than ground truth)
+
+  Per-class accuracy:
+    A2:    4/20  exact ( 20.0%)   adj:  16/20  ( 80.0%)
+    B1_1:   23/44  exact ( 52.3%)   adj:  40/44  ( 90.9%)
+    B1_2:   19/92  exact ( 20.7%)   adj:  82/92  ( 89.1%)
+    B2:    7/32  exact ( 21.9%)   adj:  19/32  ( 59.4%)
+    native:    2/29  exact (  6.9%)   adj:  24/29  ( 82.8%)
+
+  Most common error pairs (truth → pred):
+    B1_2 → B1_1  :   39x  ███████████████████████████████████████
+    B1_2 → B2  :   24x  ████████████████████████
+    native → B2  :   22x  ██████████████████████
+    B2 → B1_2  :   12x  ████████████
+    A2 → B1_1  :   12x  ████████████
+    B2 → B1_1  :   12x  ████████████
+    B1_2 → A2  :   10x  ██████████
+    B1_1 → A2  :    9x  █████████
+    B1_1 → B1_2  :    8x  ████████
+    A2 → B1_2  :    4x  ████
+
+  Round 1 disagreement analysis:
+    Full agreement    : 147
+    Partial agreement : 68
+    Full disagreement : 2
+    Accuracy when R1 fully agreed: 33/147 = 22.4%
+
+  Round 1 → Round 2 label shift analysis:
+    Total model-positions : 651
+    Label shifts (R1→R2)  : 118 (18.1%)
+    Shifts that helped    : 40  (R1 wrong → R2 correct)
+    Shifts that hurt      : 45   (R1 correct → R2 wrong)
+
+  Referee analysis:
+    Referee agreed with majority   : 214/217
+    Referee changed the decision   : 3/217
+    Clamp was triggered            : 0/217
+    Of those changes: 1 helped, 2 hurt
+
+  ⚠ UNK label appearances: 1 samples affected
+    (UNK means the model output could not be parsed as valid CEFR.)
+    Affected indices: [30]
+
+  Sample error cases (first 5):
+
+    [Index 0]
+    Truth: B1_2  |  Pred: B1_1
+    R1 labels : {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'B1_1', 'gpt4o_audio_3': 'B1_1'}
+    R2 labels : {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'B1_1', 'gpt4o_audio_3': 'B1_1'}
+    Majority  : B1_1
+    Referee   : B1_1
+    Snippet   : ...
+
+    [Index 1]
+    Truth: B1_1  |  Pred: A2
+    R1 labels : {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'A2', 'gpt4o_audio_3': 'A2'}
+    R2 labels : {'gpt4o_audio_1': 'A2', 'gpt4o_audio_2': 'A2', 'gpt4o_audio_3': 'A2'}
+    Majority  : A2
+    Referee   : A2
+    Snippet   : ...
+
+    [Index 4]
+    Truth: B1_2  |  Pred: B1_1
+    R1 labels : {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'B1_1', 'gpt4o_audio_3': 'B1_1'}
+    R2 labels : {'gpt4o_audio_1': 'B1_1', 'gpt4o_audio_2': 'B1_1', 'gpt4o_audio_3': 'B1_1'}
+    Majority  : B1_1
+    Referee   : B1_1
+    Snippet   : ...
+
+    [Index 5]
+    Truth: B2  |  Pred: B1_2
+    R1 labels : {'gpt4o_audio_1': 'B2', 'gpt4o_audio_2': 'B1_2', 'gpt4o_audio_3': 'B1_2'}
+    R2 labels : {'gpt4o_audio_1': 'B1_2', 'gpt4o_audio_2': 'B1_2', 'gpt4o_audio_3': 'B1_2'}
+    Majority  : B1_2
+    Referee   : B1_2
+    Snippet   : ...
+
+    [Index 6]
+    Truth: native  |  Pred: B2
+    R1 labels : {'gpt4o_audio_1': 'B2', 'gpt4o_audio_2': 'B2', 'gpt4o_audio_3': 'B2'}
+    R2 labels : {'gpt4o_audio_1': 'B2', 'gpt4o_audio_2': 'B2', 'gpt4o_audio_3': 'B2'}
+    Majority  : B2
+    Referee   : B2
+    Snippet   : ...
+
+############################################################
+

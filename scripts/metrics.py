@@ -43,10 +43,15 @@ def compute_metrics(y_true, y_pred):
     acc  = float(np.mean(y_true == y_pred))
     adj  = float(np.mean(np.abs(y_true - y_pred) <= 1))
     rmse = float(np.sqrt(np.mean((y_true - y_pred) ** 2)))
-    pcc, _ = pearsonr(y_true, y_pred)
+
+    # pearsonr requires at least 2 samples; return 0.0 for single-sample runs
+    if len(y_true) < 2:
+        print("[WARN] compute_metrics: only 1 sample — PCC set to 0.0 (pearsonr requires n≥2).")
+        pcc = 0.0
+    else:
+        pcc, _ = pearsonr(y_true, y_pred)
 
     # ── Macro (MC) metrics: per-class values averaged equally ────────────────
-    # This prevents dominant classes from inflating overall numbers.
     class_correct     = defaultdict(int)
     class_adj_correct = defaultdict(int)
     class_total       = defaultdict(int)
@@ -73,7 +78,7 @@ def compute_metrics(y_true, y_pred):
     ]))
 
     return {
-        "ACC":        round(acc * 100,     2),   # reported as % to match paper
+        "ACC":        round(acc * 100,     2),
         "ACC_ADJ":    round(adj * 100,     2),
         "ACC_MC":     round(acc_mc * 100,  2),
         "ACC_MC_ADJ": round(acc_mc_adj * 100, 2),
@@ -102,11 +107,6 @@ def print_metrics_table(metrics, title=""):
 # ─────────────────────────────────────────────
 
 def analyse_round1(r1_outputs):
-    """
-    Analyse Round 1 predictions for a single sample.
-    Prints per-model labels and flags inter-model disagreement.
-    Returns a dict summarising R1 state.
-    """
     labels = {o["model"]: o["label"] for o in r1_outputs}
     unique = set(labels.values())
 
@@ -126,11 +126,6 @@ def analyse_round1(r1_outputs):
 
 
 def analyse_round2(r1_outputs, r2_outputs):
-    """
-    Analyse Round 2 predictions and label shifts for a single sample.
-    Prints which models changed their label and in which direction.
-    Returns a dict summarising changes.
-    """
     r1_labels = {o["model"]: o["label"]         for o in r1_outputs}
     r2_labels = {o["model"]: o["updated_label"] for o in r2_outputs}
 
@@ -158,10 +153,6 @@ def analyse_round2(r1_outputs, r2_outputs):
 
 
 def analyse_vote(votes, final_label):
-    """
-    Analyse the majority vote result for a single sample.
-    Flags ties and vote distribution.
-    """
     sorted_votes = sorted(votes.items(), key=lambda x: -x[1])
     print(f"    [VOTE] Distribution: {dict(sorted_votes)}  →  Final: {final_label}")
 
@@ -172,10 +163,6 @@ def analyse_vote(votes, final_label):
 
 
 def analyse_referee(majority_label, ref_raw_label, clamped_label):
-    """
-    Analyse referee decision for a single sample.
-    Shows whether referee agreed, changed, or was clamped.
-    """
     print(f"    [REF]  Majority label : {majority_label}")
     print(f"    [REF]  Referee said   : {ref_raw_label}")
     print(f"    [REF]  After clamp    : {clamped_label}")
@@ -197,17 +184,6 @@ def analyse_referee(majority_label, ref_raw_label, clamped_label):
 # ─────────────────────────────────────────────
 
 def error_analysis_report(sample_details, pipeline_name="pipeline"):
-    """
-    Prints a comprehensive post-hoc error analysis across all samples.
-
-    sample_details : list of dicts produced during the run, each containing:
-        index, truth, pred, transcript_snippet,
-        round1_labels (dict model→label),
-        round2_labels (dict model→label),
-        majority_pred (optional, for referee pipeline),
-        ref_raw_label (optional, for referee pipeline),
-        vote_distribution (dict)
-    """
     print(f"\n{'#'*60}")
     print(f"  POST-HOC ERROR ANALYSIS  —  {pipeline_name}")
     print(f"{'#'*60}")
@@ -220,7 +196,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
     print(f"  Correct         : {correct}  ({100*correct/total:.1f}%)")
     print(f"  Errors          : {len(errors)}  ({100*len(errors)/total:.1f}%)")
 
-    # ── Direction of errors ────────────────────────────────────────────────
     over = under = exact = 0
     for s in sample_details:
         diff = CEFR_TO_NUM.get(s["pred"], 0) - CEFR_TO_NUM.get(s["truth"], 0)
@@ -233,7 +208,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
     print(f"    Over-rated   : {over}  (model predicted higher level than ground truth)")
     print(f"    Under-rated  : {under} (model predicted lower level than ground truth)")
 
-    # ── Per-class accuracy ─────────────────────────────────────────────────
     print(f"\n  Per-class accuracy:")
     class_stats = defaultdict(lambda: {"correct": 0, "total": 0, "adj": 0})
     for s in sample_details:
@@ -253,7 +227,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
             print(f"    {level}:  {c['correct']:>3}/{c['total']:<3} exact ({acc_pct:5.1f}%)   "
                   f"adj: {c['adj']:>3}/{c['total']:<3} ({adj_pct:5.1f}%)")
 
-    # ── Most common confusion pairs ────────────────────────────────────────
     print(f"\n  Most common error pairs (truth → pred):")
     pair_counts = defaultdict(int)
     for s in errors:
@@ -262,7 +235,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
         bar = "█" * cnt
         print(f"    {t} → {p}  :  {cnt:>3}x  {bar}")
 
-    # ── R1 inter-model disagreement ────────────────────────────────────────
     print(f"\n  Round 1 disagreement analysis:")
     r1_full_agree = r1_partial = r1_full_disagree = 0
     for s in sample_details:
@@ -276,7 +248,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
     print(f"    Partial agreement : {r1_partial}")
     print(f"    Full disagreement : {r1_full_disagree}")
 
-    # When R1 was fully agreed, how often was the final answer correct?
     agreed_correct = sum(
         1 for s in sample_details
         if len(set(s.get("round1_labels", {}).values())) == 1
@@ -287,12 +258,11 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
         print(f"    Accuracy when R1 fully agreed: "
               f"{agreed_correct}/{agreed_total} = {100*agreed_correct/agreed_total:.1f}%")
 
-    # ── R1 → R2 label shift analysis ──────────────────────────────────────
     print(f"\n  Round 1 → Round 2 label shift analysis:")
     total_positions = 0
     total_shifts    = 0
-    shift_helped    = 0   # shifted AND final was correct (and R1 was wrong)
-    shift_hurt      = 0   # shifted AND final was wrong (and R1 was correct)
+    shift_helped    = 0
+    shift_hurt      = 0
 
     for s in sample_details:
         r1 = s.get("round1_labels", {})
@@ -311,7 +281,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
     print(f"    Shifts that helped    : {shift_helped}  (R1 wrong → R2 correct)")
     print(f"    Shifts that hurt      : {shift_hurt}   (R1 correct → R2 wrong)")
 
-    # ── Referee-specific analysis (if applicable) ──────────────────────────
     if any("ref_raw_label" in s and s["ref_raw_label"] for s in sample_details):
         print(f"\n  Referee analysis:")
         ref_agree   = sum(1 for s in sample_details
@@ -326,7 +295,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
         print(f"    Referee changed the decision   : {ref_changed}/{total}")
         print(f"    Clamp was triggered            : {ref_clamped}/{total}")
 
-        # Of the times referee changed the result, how often was it correct?
         ref_changed_correct = sum(
             1 for s in sample_details
             if s.get("majority_pred") != s["pred"] and s["pred"] == s["truth"]
@@ -337,7 +305,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
         )
         print(f"    Of those changes: {ref_changed_correct} helped, {ref_changed_wrong} hurt")
 
-    # ── UNK label analysis ────────────────────────────────────────────────
     unk_samples = [s for s in sample_details
                    if s["pred"] == "UNK" or any(
                        v == "UNK" for v in s.get("round1_labels", {}).values()
@@ -351,7 +318,6 @@ def error_analysis_report(sample_details, pipeline_name="pipeline"):
     else:
         print(f"\n  ✓ No UNK labels — all outputs parsed successfully.")
 
-    # ── Sample error cases ────────────────────────────────────────────────
     print(f"\n  Sample error cases (first 5):")
     for s in errors[:5]:
         print(f"\n    [Index {s['index']}]")
